@@ -1,0 +1,53 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>About Us - Travel9.net</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link media="all" rel="stylesheet" href="{% static 'nessy_app-0bf6a8c96f.css' %}">
+        <link rel="stylesheet" href="{% static 'rebrand_overrides-8245b4a89e.css' %}">
+        <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
+        <meta name="keywords" content="travel9, travel9.net, book travel online"/>
+        <meta name="description" content="Travel9 helps users understand the online travel world, empowering them to make better decisions when it comes to choosing who to book travel with."/>
+    </head>
+
+    <body>
+
+    {% include "header.html" %}
+
+        <div class="bgheader bgheaderd">
+            <div class="bgheaderbodysite" style="text-align:center">
+                <div class="bgimagecontainersite">
+                    <div class="bgimage" style="background-image: url({% static 'homebg.jpg' %});"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainwrapper">
+
+            <div class="maincontent padded">
+                <div id="wrapper">
+                    <div id="left" class="padded">
+                        <div class="title">
+                            About Travel9.net
+                        </div>
+
+                        Booking travel online isn’t an easy task. You’ve come across some great deals, but which ones are too good to be true? <br><br>
+
+                        Travel9.net allows you to compare all aspects about the various booking sites including their pricing, features, customer service and reputation to make sure that you’re booking with the site that will serve you the best. <br><br>
+
+                        With the current uncertain times, it’s never been more important to make sure that you’re booking with the right company. Do your research first, do it here at Travel9.net
+
+                    </div>
+                    <div id="right" class="padded">
+                        Here is the right section
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+</html>

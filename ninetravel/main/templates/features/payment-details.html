@@ -1,0 +1,48 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>{{site.name}} Comparison Overview</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link media="all" rel="stylesheet" href="{% static 'nessy_app-0bf6a8c96f.css' %}">
+        <link rel="stylesheet" href="{% static 'rebrand_overrides-8245b4a89e.css' %}">
+        <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+    {% include "header.html" %}
+
+        <div class="bgheader bgheaderd">
+            <div class="bgheaderbodysite" style="text-align:center">
+                <div class="bgimagecontainersite">
+                    <div class="bgimage" style="background-image: url({% static 'comparisonbg.jpg' %});"></div>
+                </div>
+                <div class="comparisonlogobox orangeborder vs">
+                </div>
+            </div>
+        </div>
+
+        <div class="mainwrapper">
+
+            <div class="maincontent padded">
+                <div id="wrapper">
+                    <table border = "0" cellpadding = "5" cellspacing = "5">
+                        {% for site in allsites %}
+                         <tr>
+                            <th style="width:50%">{{site.name}}</th>
+                            <th>{{site.descpaymentcontent}}</th>
+                         </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+</html>
+                
