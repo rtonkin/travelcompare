@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5e11128-d797-4227-a214-0d6cb357dcc9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="60" selection-start-column="60" selection-end-column="60" />
+              <caret column="62" lean-forward="true" selection-start-column="62" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -217,18 +216,6 @@
               <item name="travelcompare" type="462c0819:PsiDirectoryNode" />
               <item name="ninetravel" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="travelcompare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="travelcompare" type="462c0819:PsiDirectoryNode" />
-              <item name="ninetravel" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="travelcompare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="travelcompare" type="462c0819:PsiDirectoryNode" />
-              <item name="ninetravel" type="462c0819:PsiDirectoryNode" />
-              <item name="ninetravel" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -282,9 +269,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2176" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22170253" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22170253" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -295,7 +281,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3299532" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4024961" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4024961" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32839313" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -623,7 +609,7 @@
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="60" selection-start-column="60" selection-end-column="60" />
+          <caret column="62" lean-forward="true" selection-start-column="62" selection-end-column="62" />
         </state>
       </provider>
     </entry>
