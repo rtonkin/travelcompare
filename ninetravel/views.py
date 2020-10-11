@@ -7,7 +7,7 @@ def index(request):
     bookingsites = Site.objects.all()
     articles = Article.objects.all()
 
-    return render(request, 'main/templates/index.html', {'bookingsites': bookingsites, 'articles': articles})
+    return render(request, 'index.html', {'bookingsites': bookingsites, 'articles': articles})
 
 
 def site(request, product, slug):
