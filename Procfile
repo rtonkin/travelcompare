@@ -1,1 +1,1 @@
-web: gunicorn travelcompare.wsgi --log-file -
+web: gunicorn ninetravel.wsgi --log-file -
