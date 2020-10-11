@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5e11128-d797-4227-a214-0d6cb357dcc9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ninetravel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ninetravel/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ninetravel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ninetravel/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ninetravel/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="510">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -96,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ninetravel/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
@@ -208,6 +209,7 @@
         <option value="$PROJECT_DIR$/ninetravel/urls.py" />
         <option value="$PROJECT_DIR$/ninetravel/settings.py" />
         <option value="$PROJECT_DIR$/ninetravel/models.py" />
+        <option value="$PROJECT_DIR$/ninetravel/views.py" />
       </list>
     </option>
   </component>
@@ -234,18 +236,6 @@
             <path>
               <item name="travelcompare" type="b2602c69:ProjectViewProjectNode" />
               <item name="travelcompare" type="462c0819:PsiDirectoryNode" />
-              <item name="ninetravel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="travelcompare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="travelcompare" type="462c0819:PsiDirectoryNode" />
-              <item name="ninetravel" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="travelcompare" type="b2602c69:ProjectViewProjectNode" />
-              <item name="travelcompare" type="462c0819:PsiDirectoryNode" />
-              <item name="ninetravel" type="462c0819:PsiDirectoryNode" />
               <item name="ninetravel" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -616,16 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ninetravel/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ninetravel/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1938">
@@ -642,6 +622,16 @@
           <caret line="167" column="42" lean-forward="true" selection-start-line="167" selection-start-column="42" selection-end-line="167" selection-end-column="42" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ninetravel/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
