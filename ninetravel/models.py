@@ -53,6 +53,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        app_label = 'product'
+
 
 class SiteProduct(models.Model):
 
@@ -92,6 +95,9 @@ class SiteProduct(models.Model):
         name = self.site.name + " " + self.product.name
         return name
 
+    class Meta:
+        app_label = 'siteproduct'
+
 
 class Article(models.Model):
     name = models.CharField(max_length=100)
@@ -113,6 +119,9 @@ class Article(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        app_label = 'article'
+
 
 class Feature(models.Model):
     name = models.CharField(max_length=50)
@@ -121,6 +130,9 @@ class Feature(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        app_label = 'feature'
 
 
 class PricingRecord(models.Model):
@@ -132,6 +144,9 @@ class PricingRecord(models.Model):
     def __str__(self):
         name = str(self.productname) + " " + str(self.site.site.name)
         return name
+
+    class Meta:
+        app_label = 'pricingrecord'
 
 
 class Price(models.Model):
@@ -145,6 +160,7 @@ class Price(models.Model):
 
     class Meta:
         unique_together = ('pricingrecord', 'daterecorded',)
+        app_label = 'orice'
 
 
 @receiver(post_save, sender=Price)
