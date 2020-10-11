@@ -1,1 +1,1 @@
-web: gunicorn ninetravel.wsgi --log-file -
+web: gunicorn ninetravel.wsgi --log-file --python ninetravel -
