@@ -43,6 +43,9 @@ class Site(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        app_label = 'site'
+
 
 class Product(models.Model):
     name = models.CharField(max_length=30)
