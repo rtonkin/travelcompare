@@ -1,0 +1,61 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Ultimate Travel Articles - Travel Smarter, Save More - 9Travel.net</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link media="all" rel="stylesheet" href="{% static 'nessy_app-0bf6a8c96f.css' %}">
+        <link rel="stylesheet" href="{% static 'rebrand_overrides-8245b4a89e.css' %}">
+        <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="keywords" content="ultimate flight booking guide, ultimate hotel booking guide"/>
+        <meta name="description" content="Discover the world and how to best book your next trip with our in-depth travel articles covering online travel agencies and top destinations."/>
+    </head>
+
+    <body>
+
+    {% include "header.html" %}
+
+        <div class="bgheader bgheaderd">
+            <div class="bgheaderbodysite" style="text-align:center">
+                <div class="bgimagecontainersite">
+                    <div class="bgimage" style="background-image: url({% static 'homebg.jpg' %});"><div class="titleonbg">Articles</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainwrapper">
+
+            <div class="maincontent padded">
+                <div id="wrapper">
+                    <div id="left" class="padded arts">
+                        <div class="title">
+                            Articles
+                        </div>
+                        {% for article in arts %}
+                        <a href="{% url 'article' slug=article.slug %}"><div class="fwarticle"><img src="{% static article.thumbnailfilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{article.name}}</p><p id="text">{{article.text|truncatechars:120}}</p></div></a>
+                        {% endfor %}
+                    </div>
+                    <div class="mobarts">
+                        {% for article in arts %}
+                        <a href="{% url 'article' slug=article.slug %}"><div class="articlecard"><img src="{% static article.thumbnailfilename %}" alt="Headshot photo" class="cardimagetop"><p id="title">{{article.name}}</p><p id="text">{{article.text|truncatechars:120}}</p></div></a>
+                        {% endfor  %}
+                    </div>
+                    <div id="right" class="padded">
+                        <div class="title">
+                            Online Travel Agencies
+                        </div>
+                        {% for site in allsites %}
+                        <a href="{% url 'site' slug=site.slug product='hotels' %}"><img class="competitor" src="{% static site.logofilename %}"></a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+</html>
+                

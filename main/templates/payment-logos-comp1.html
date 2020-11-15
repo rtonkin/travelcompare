@@ -1,0 +1,8 @@
+{% load static %}
+
+{% if siteaprod.paymentvisa %}<img src="{% static 'paymentlogos/visa.svg' %}" style="max-width:100px">{% endif%}
+{% if siteaprod.paymentmastercard %}<img src="{% static 'paymentlogos/mastercard.svg' %}" class="fiftyhigh" style="max-width:80px">{% endif%}
+{% if siteaprod.paymentamex %}<img src="{% static 'paymentlogos/amex.svg' %}" class="fiftyhigh">{% endif%}
+{% if siteaprod.paymentpaypal %}<img src="{% static 'paymentlogos/paypal.svg' %}" class="fiftyhigh">{% endif%}
+{% if siteaprod.paymentapplepay %}<img src="{% static 'paymentlogos/applepay.svg' %}" class="fiftyhigh">{% endif%}
+{% if siteaprod.paymentgooglepay %}<img src="{% static 'paymentlogos/googlepay.svg' %}" class="fiftyhigh" style="max-width:120px">{% endif%}

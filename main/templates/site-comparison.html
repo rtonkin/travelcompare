@@ -1,0 +1,134 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>{{sitea.name}} vs {{siteb.name}} - Which is Better? - 9Travel.net</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link media="all" rel="stylesheet" href="{% static 'nessy_app-0bf6a8c96f.css' %}">
+        <link rel="stylesheet" href="{% static 'rebrand_overrides-8245b4a89e.css' %}">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
+        <meta name="keywords" content="{{sitea.name}} vs {{siteb.name}}, is {{sitea.name}} or {{siteb.name}} cheaper, is {{sitea.name}} or {{siteb.name}} better"/>
+        <meta name="description" content="Compare the pricing and service of {{site.name}} with {{site.name}} to see which is most suitable for your travel needs."/>
+    </head>
+
+    <body>
+
+    {% include "header.html" %}
+
+        <div class="bgheader bgheaderd">
+            <div class="bgheaderbodysite" style="text-align:center">
+                <div class="bgimagecontainersite">
+                    <div class="bgimage" style="background-image: url({% static 'comparisonbg.jpg' %});"></div>
+                </div>
+                <div class="comparisonlogobox orangeborder vs">
+                    <a href="{% url 'site' slug=sitea.slug product=prod.name %}"><img src="{% static sitea.logofilename %}" class="logoleft"></a> vs
+                    <a href="{% url 'site' slug=siteb.slug product=prod.name %}"><img src="{% static siteb.logofilename %}" class="logoright"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainwrapper">
+
+            <div class="maincontent padded">
+                <div id="wrapper">
+                    <table border = "0" cellpadding = "5" cellspacing = "5">
+                         <tr>
+                            <th class="sitetitle">{{sitea.name}}</th>
+                            <th class="sitetitle">{{siteb.name}}</th>
+                         </tr>
+                         <tr>
+                            <th style="width:50%">Overview</th>
+                            <th>Overview</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign"><p class="shrinkable">{{siteaprod.descoverviewcontent}}</p></td>
+                            <td class="topalign shrinkable">{{sitebprod.descoverviewcontent}}</td>
+                         </tr>
+                         <tr>
+                            <th>Features</th>
+                            <th>Features</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable">{{siteaprod.descfeaturescontent}}</td>
+                            <td class="topalign shrinkable">{{sitebprod.descfeaturescontent}}</td>
+                         </tr>
+                         <tr>
+                            <th>Pricing & Fees</th>
+                            <th>Pricing & Fees</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable">{{siteaprod.descpricingcontent}}</td>
+                            <td class="topalign shrinkable">{{sitebprod.descpricingcontent}}</td>
+                         </tr>
+                         <tr>
+                            <th>Availability</th>
+                            <th>Availability</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable">{{siteaprod.descavailabilitycontent}}</td>
+                            <td class="topalign shrinkable">{{sitebprod.descavailabilitycontent}}</td>
+                         </tr>
+                         <tr>
+                            <th>Accessibility</th>
+                            <th>Accessibility</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable">{{siteaprod.descaccessibilitycontent}}</td>
+                            <td class="topalign shrinkable">{{sitebprod.descaccessibilitycontent}}</td>
+                         </tr>
+                         <tr>
+                            <th>Payment Methods</th>
+                            <th>Payment Methods</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable">{% include "payment-logos-comp1.html" %}<br>{{siteaprod.descpaymentcontent}}</td>
+                            <td class="topalign shrinkable">{% include "payment-logos-comp2.html" %}<br>{{sitebprod.descpaymentcontent}}</td>
+                         </tr>
+                         <tr>
+                            <th>Reputation</th>
+                            <th>Reputation</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable">{{siteaprod.descreputationcontent}}</td>
+                            <td class="topalign shrinkable">{{sitebprod.descreputationcontent}}</td>
+                         </tr>
+                         <tr>
+                            <th>Customer Service</th>
+                            <th>Customer Service</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable">{{siteaprod.descservicecontent}}</td>
+                            <td class="topalign shrinkable">{{sitebprod.descservicecontent}}</td>
+                         </tr>
+                         <tr>
+                            <th>Summary</th>
+                            <th>Summary</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable">{{siteaprod.descsummarycontent}}</td>
+                            <td class="topalign shrinkable">{{sitebprod.descsummarycontent}}</td>
+                         </tr>
+                         <tr>
+                            <th>Deals</th>
+                            <th>Deals</th>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable">{{siteaprod.descsdealscontent}}</td>
+                            <td class="topalign shrinkable">{{sitebprod.descsdealscontent}}</td>
+                         </tr>
+                         <tr>
+                            <td class="topalign shrinkable center"><a href="{{siteaprod.link}}"><button class="bt halfwidth">View Website</button></a></td>
+                            <td class="topalign shrinkable center"><a href="{{sitebprod.link}}"><button class="bt halfwidth">View Website</button></a></td>
+                         </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+</html>
+                

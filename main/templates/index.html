@@ -1,0 +1,122 @@
+{% load static %}
+
+<html>
+
+    <head>
+        <title>Compare Travel Online Sites and Get the Best Deal - 9Travel.net</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link media="all" rel="stylesheet" href="{% static 'nessy_app-0bf6a8c96f.css' %}">
+        <link rel="stylesheet" href="{% static 'rebrand_overrides-8245b4a89e.css' %}">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="keywords" content="online travel sites, best hotel site, best flight site, best travel app"/>
+        <meta name="description" content="Make sure you are getting the best deal when you're booking online travel. Compare all online travel sites and apps to find the one which suits you best."/>
+    </head>
+
+    <body>
+
+    <script>function menuSwitch() {document.getElementsByClassName("topnav")[0].classList.toggle("responsive");}</script>
+    <script>function rudrSwitchTab(rudr_tab_id, rudr_tab_content) {
+	// first of all we get all tab content blocks (I think the best way to get them by class names)
+	var x = document.getElementsByClassName("tabcontent");
+	var i;
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = 'none'; // hide all tab content
+	}
+	document.getElementById(rudr_tab_content).style.display = 'block'; // display the content of the tab we need
+
+	// now we get all tab menu items by class names (use the next code only if you need to highlight current tab)
+	var x = document.getElementsByClassName("tabmenu");
+	var i;
+	for (i = 0; i < x.length; i++) {
+		x[i].className = 'tabmenu';
+	}
+	document.getElementById(rudr_tab_id).className = 'tabmenu active';
+}   </script>
+
+    {% include "header.html" %}
+
+        <div class="bgheader bgheaderd">
+            <div class="bgheaderbody">
+
+                <div class="bgimagecontainer">
+                    <div class="bgimage" style="background-image: url({% static 'homebg.jpg' %});"></div>
+                </div>
+
+                <div class="bgheadercontent">
+
+                    <div class="heroheader">
+                        <h1 class="herotitle">Book Travel. Book Better.</h1>
+                        <h2 class="herosubtitle"><div>Compare <span class="herosubtitlespan">online travel agencies</span> and learn how to get a deal which suits you.</div></h2>
+                        <div class="herosearch">
+                            <form class="searchcontainer" action="/search" accept-charset="UTF-8" method="get">
+                                <input name="utf8" type="hidden" value="✓">
+                                <div class="searchbox">
+                                        <input type="text" value="" autocomplete="off" placeholder="Enter online travel booking site name" class="searchinput searchleft" spellcheck="false" style="position: relative; vertical-align: top;">
+                                </div>
+                                <button name="button" type="submit" class="searchright"><div>Search</div></button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mainwrapper">
+
+            <div class="iconsmenu">
+                <a href="javascript:rudrSwitchTab('tb_1', 'content_1');" id="tb_1" class="tabmenu active"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/003-hotel.svg" %}'><br>Hotels</div></a>
+                <a href="javascript:rudrSwitchTab('tb_2', 'content_2');" id="tb_2" class="tabmenu"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/001-plane.svg" %}'><br>Flights</div></a>
+                <a href="javascript:rudrSwitchTab('tb_3', 'content_3');" id="tb_3" class="tabmenu"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/002-train.svg" %}'><br>Trains</div></a>
+                <a href="javascript:rudrSwitchTab('tb_4', 'content_4');" id="tb_4" class="tabmenu"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/005-kaminarimon-gate.svg" %}'><br>Tours</div></a>
+                <a href="javascript:rudrSwitchTab('tb_5', 'content_5');" id="tb_5" class="tabmenu"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/004-ticket.svg" %}'><br>Tickets</div></a>
+            </div>
+
+            <div id="content_1" class="tabcontent">
+                {% for site in bookingsites %}{% if site.prodhotels %}
+                <a href="{% url 'site' slug=site.slug product='hotels' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p></div></a>
+                {% endif %}{% endfor %}
+            </div>
+
+            <div id="content_2" class="tabcontent" style="display:none;">
+                {% for site in bookingsites %}{% if site.prodflights %}
+                <a href="{% url 'site' slug=site.slug product='flights' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p></div></a>
+                {% endif %}{% endfor %}
+            </div>
+
+            <div id="content_3" class="tabcontent" style="display:none;">
+                {% for site in bookingsites %}{% if site.prodtrains %}
+                <a href="{% url 'site' slug=site.slug product='trains' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p></div></a>
+                {% endif %}{% endfor %}
+            </div>
+
+            <div id="content_4" class="tabcontent" style="display:none;">
+                {% for site in bookingsites %}{% if site.prodtours %}
+                <a href="{% url 'site' slug=site.slug product='tours' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p></div></a>
+                {% endif %}{% endfor %}
+            </div>
+
+            <div id="content_5" class="tabcontent" style="display:none;">
+                {% for site in bookingsites %}{% if site.prodtickets %}
+                <a href="{% url 'site' slug=site.slug product='tickets' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p></div></a>
+                {% endif %}{% endfor %}
+            </div>
+
+            <div class="articles">
+                <h3 class="subtitle" style="padding-bottom:20px">Articles</h3>
+                <div class="">
+                {% for article in articles %}{% if article.showonhomepage %}
+                <a href="{% url 'article' slug=article.slug %}"><div class="articlecard"><img src="{% static article.thumbnailfilename %}" alt="Headshot photo" class="cardimagetop"><p class="articlecardtext">{{article.name}}</p></div></a>
+                {% endif %}{% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+
+</html>

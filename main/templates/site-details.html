@@ -1,0 +1,234 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>{{site.name}} Overview - Online Travel Site and App Reviews - 9Travel.net</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link media="all" rel="stylesheet" href="{% static 'nessy_app-0bf6a8c96f.css' %}">
+        <link rel="stylesheet" href="{% static 'rebrand_overrides-8245b4a89e.css' %}">
+        <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="keywords" content="{{site.name}} app, {{site.name}} review, compare {{site.name}}, is {{site.name}} reliable, is {{site.name}} cheap"/>
+        <meta name="description" content="Read our review of {{site.name}} and compare it with online online travel sites to make sure you're getting the best deal."/>
+    </head>
+
+    <body>
+
+    {% include "header.html" %}
+
+        <div class="bgheader bgheaderd">
+            <div class="bgheaderbodysite" style="text-align:center">
+                <div class="bgimagecontainersite">
+                    <div class="bgimage" style="background-image: url({% static site.bgimagefilename %});"></div>
+                </div>
+                <div class="namebox">
+                    <div class="flex-container orangeborder">
+                        <div class="sitelogo greyborder" style="flex-grow: 2">
+                            <img src="{% static site.logofilename %}">
+                        </div>
+                        <div class="sitename" style="flex-grow: 8">{{ site.name }}<br>
+                        {% if site.prodhotels %}
+                        <i class="fas fa-bed orange"></i>
+                        {% endif %}
+                        {% if site.prodflights %}
+                        <i class="fas fa-plane orange"></i>
+                        {% endif %}
+                        {% if site.prodcarrentals %}
+                        <i class="fas fa-car orange"></i>
+                        {% endif %}
+                        {% if site.prodtrains %}
+                        <i class="fas fa-train orange"></i>
+                        {% endif %}
+                        {% if site.prodcruises %}
+                        <i class="fas fa-ship orange"></i>
+                        {% endif %}
+                        {% if site.prodtransfers %}
+                        <i class="fas fa-shuttle-van orange"></i>
+                        {% endif %}
+                        {% if site.prodtickets %}
+                        <i class="fas fa-ticket-alt orange"></i>
+                        {% endif %}
+                        {% if site.prodtours %}
+                        <i class="fas fa-landmark orange"></i>
+                        {% endif %}
+                        {% if not site.prodhotels %}
+                        <i class="fas fa-bed grey"></i>
+                        {% endif %}
+                        {% if not site.prodflights %}
+                        <i class="fas fa-plane grey"></i>
+                        {% endif %}
+                        {% if not site.prodcarrentals %}
+                        <i class="fas fa-car grey"></i>
+                        {% endif %}
+                        {% if not site.prodtrains %}
+                        <i class="fas fa-train grey"></i>
+                        {% endif %}
+                        {% if not site.prodcruises %}
+                        <i class="fas fa-ship grey"></i>
+                        {% endif %}
+                        {% if not site.prodtransfers %}
+                        <i class="fas fa-shuttle-van grey"></i>
+                        {% endif %}
+                        {% if not site.prodtickets %}
+                        <i class="fas fa-ticket-alt grey"></i>
+                        {% endif %}
+                        {% if not site.prodtours %}
+                        <i class="fas fa-landmark grey"></i>
+                        {% endif %}
+                        </div>
+                        <div style="flex-grow: 1" class="padded">
+                            <a href="{{siteproduct.link}}"><button class="bt">View Website</button></a>
+                            <a href="{{site.applink}}"><button class="bt">Download App</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainwrapper">
+
+            <div class="maincontent padded">
+                <div class="wrapper">
+                    <div id="left" class="padded">
+                        <div class="title">
+                            {{site.name}} Overview
+                        </div>
+                        <div class="mobilenb">
+                            <a href="{{siteproduct.link}}"><button class="bt">View Website</button></a>
+                            <a href="{{site.applink}}"><button class="bt">Download App</button></a>
+                        </div>
+                        <div class="skillsmobile">
+                            <div class="title">
+                                {{site.name}} Ratings
+                            </div>
+
+                            <div class="cols">
+                                <p class="mobskillstitle">Price</p>
+                                <div class="skillcont">
+                                <div class="skills html" style="width:{{siteproduct.spprice}}%">{{siteproduct.spprice}}%</div>
+                                </div>
+
+                                <p class="mobskillstitle">Coverage</>
+                                <div class="skillcont">
+                                <div class="skills css" style="width:{{siteproduct.spcoverage}}%">{{siteproduct.spcoverage}}%</div>
+                                </div>
+
+                                <p class="mobskillstitle">Ease of Use</>
+                                <div class="skillcont">
+                                <div class="skills js" style="width:{{siteproduct.speaseofuse}}%">{{siteproduct.speaseofuse}}%</div>
+                                </div>
+
+                                <p class="mobskillstitle">Reputation</>
+                                <div class="skillcont">
+                                <div class="skills php" style="width:{{siteproduct.spreputation}}%">{{siteproduct.spreputation}}%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title mobextrapad">Overview</div>
+                        <p id="shrinkMe" class="shrinkable">{{siteproduct.descoverviewcontent}}</p>
+                        <div class="title">Features</div>
+                        <p>{{siteproduct.descfeaturescontent}}</p>
+                        <div class="title">Pricing & Fees</div>
+                        <p>{{siteproduct.descpricingcontent}}</p>
+                        <div class="title">Availability</div>
+                        <p>{{siteproduct.descavailabilitycontent}}</p>
+                        <div class="title">Accessibility</div>
+                        <p>{{siteproduct.descaccessibilitycontent}}</p>
+                        <div class="title">Payment Methods</div>
+                        {% include "payment-logos.html" %}
+                        <p>{{siteproduct.descpaymentcontent}}</p>
+                        <div class="title">Reputation</div>
+                        <p>{{siteproduct.descreputationcontent}}</p>
+                        <div class="title">Customer Service</div>
+                        <p>{{siteproduct.descservicecontent}}</p>
+                        <div class="title">Summary</div>
+                        <p>{{siteproduct.descsummarycontent}}</p>
+                        {% if siteproduct.switchdeals %}
+                        <div class="title">Deals</div>
+                        <p>{{siteproduct.descsdealscontent}}</p>
+                        {% endif %}
+                        <div style="flex-grow: 1" class="padded">
+                            <a href="{{siteproduct.link}}"><button class="bt">View Website</button></a>
+                            <a href="{{site.applink}}"><button class="bt">Download App</button></a>
+                        </div>
+                        <div class="title">All {{site.name}}'s Products</div>
+                        {% if site.prodhotels %}
+                        <a href="{% url 'site' product='hotels' slug=site.slug %}" style="color:#ff492c;padding:20px 20px 20px 20px"><i class="fas fa-bed bigicon"></i></a>
+                        {% endif %}
+                        {% if site.prodflights %}
+                        <a href="{% url 'site' product='flights' slug=site.slug %}" style="color:#ff492c;padding:20px 20px 20px 20px"><i class="fas fa-plane bigicon"></i></a>
+                        {% endif %}
+                        {% if site.prodcarrentals %}
+                        <i class="fas fa-car orange bigicon" style="padding:20px 20px 20px 20px"></i>
+                        {% endif %}
+                        {% if site.prodtrains %}
+                        <a href="{% url 'site' product='trains' slug=site.slug %}" style="color:#ff492c;padding:20px 20px 20px 20px"><i class="fas fa-train bigicon"></i></a>
+                        {% endif %}
+                        {% if site.prodcruises %}
+                        <i class="fas fa-ship orange bigicon" style="padding:20px 20px 20px 20px"></i>
+                        {% endif %}
+                        {% if site.prodtransfers %}
+                        <i class="fas fa-shuttle-van orange bigicon" style="padding:20px 20px 20px 20px"></i>
+                        {% endif %}
+                        {% if site.prodtickets %}
+                        <i class="fas fa-ticket-alt orange bigicon" style="padding:20px 20px 20px 20px"></i>
+                        {% endif %}
+                        {% if site.prodtours %}
+                        <i class="fas fa-landmark orange bigicon" style="padding:20px 20px 20px 20px"></i>
+                        {% endif %}
+                        <div class="title">Compare {{site.name}} to:</div>
+                        <div class="truncate"></div>
+                        <div class="competitors">
+                        {% for sites in compsites %}
+                            <a href="{% url 'comparison' sitea=site.slug siteb=sites.site.slug product=prod %}"><img class="competitor" src="{% static sites.site.logofilename %}"></a>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    <div id="right" class="padded">
+
+                        <div class="skillsweb">
+                            <div class="title">
+                                {{site.name}} Ratings
+                            </div>
+
+                            <p>Price</p>
+                            <div class="skillcont">
+                            <div class="skills html" style="width:{{siteproduct.spprice}}%">{{siteproduct.spprice}}%</div>
+                            </div>
+
+                            <p>Coverage</p>
+                            <div class="skillcont">
+                            <div class="skills css" style="width:{{siteproduct.spcoverage}}%">{{siteproduct.spcoverage}}%</div>
+                            </div>
+
+                            <p>Ease of Use</p>
+                            <div class="skillcont">
+                            <div class="skills js" style="width:{{siteproduct.speaseofuse}}%">{{siteproduct.speaseofuse}}%</div>
+                            </div>
+
+                            <p>Reputation</p>
+                            <div class="skillcont">
+                            <div class="skills php" style="width:{{siteproduct.spreputation}}%">{{siteproduct.spreputation}}%</div>
+                            </div>
+                        </div>
+
+                        <div class="title">
+                            <br>Competitor Sites
+                            <div class="competitors">
+                            {% for sp in compsites %}
+                                <a href="{% url 'site' slug=sp.site.slug product=prod.name %}"><div class="competitorcard"><img src="{% static sp.site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title2">{{sp.site.name}}</p><p><a href="{{sp.link}}"><button class="bt-short">Go To Website</button></a><a href="{% url 'site' slug=sp.site.slug product=prod.name %}"><button class="bt-short">Read Review</button></a></p></div></a>
+                            {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+</html>
