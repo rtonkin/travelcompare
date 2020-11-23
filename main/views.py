@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Site, Article, Feature, SiteProduct, Product
+from dal import autocomplete
 
 
 def index(request):
@@ -76,3 +77,13 @@ def allarticles(request):
 def about(request):
 
     return render(request, 'main/templates/about.html')
+
+
+class MainPageAutocomplete(autocomplete.Select2QuerySetView):
+    def get_queryset(self):
+        qs = SiteProduct.objects.all()
+
+        if self.q:
+            qs = qs.filter(name__istartswith=self.q)
+
+        return qs

@@ -163,3 +163,22 @@ def collect_transactions(sender, instance, **kwargs):
     newprice = tp/len(allrecords)
     ps.sppriceraw = newprice
     ps.save()
+
+
+class Redirect(models.Model):
+    rid = models.IntegerField()
+    link = models.CharField(max_length=400)
+    description = models.CharField(max_length=200, default="")
+    counter = models.IntegerField()
+
+    def clickcount(self):
+        r = Redirect.objects.all()
+        t = TrackingClick.objects.all()
+        rt = r.t_set.all()
+        tempviews = rt.count()
+        return tempviews
+
+
+class TrackingClick(models.Model):
+    redirect = models.ForeignKey(Redirect, related_name='redirects')
+    datetime = models.DateTimeField(auto_now_add=True, null=True)

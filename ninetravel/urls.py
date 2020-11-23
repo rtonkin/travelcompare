@@ -10,5 +10,6 @@ urlpatterns = [
     path('travelsites/<product>/<slug>/', views.site, name='site'),
     path('articles/all/', views.allarticles, name='allarticles'),
     path('articles/<slug>/', views.article, name='article'),
-    path('about/', views.about, name='about')
+    path('about/', views.about, name='about'),
+    path('mainpage-autocomplete/', views.MainPageAutocomplete.as_view(), name='mainpage-autocomplete'),
 ]
