@@ -180,5 +180,5 @@ class Redirect(models.Model):
 
 
 class TrackingClick(models.Model):
-    redirect = models.ForeignKey(Redirect, related_name='redirects')
+    redirect = models.ForeignKey(Redirect, related_name='redirects',  on_delete=models.CASCADE,)
     datetime = models.DateTimeField(auto_now_add=True, null=True)
