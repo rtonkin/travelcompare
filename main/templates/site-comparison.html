@@ -2,6 +2,7 @@
 
 <html>
     <head>
+        {% include "ga.html" %}
         <title>{{sitea.name}} vs {{siteb.name}} - Which is Better? - 9Travel.net</title>
         <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
         <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -10,7 +11,7 @@
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
         <meta name="keywords" content="{{sitea.name}} vs {{siteb.name}}, is {{sitea.name}} or {{siteb.name}} cheaper, is {{sitea.name}} or {{siteb.name}} better"/>
-        <meta name="description" content="Compare the pricing and service of {{site.name}} with {{site.name}} to see which is most suitable for your travel needs."/>
+        <meta name="description" content="Compare the pricing and service of {{site.name}} with {{site.name}} to see which is most suitable for your travel needs."/
     </head>
 
     <body>
