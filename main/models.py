@@ -11,8 +11,8 @@ class Site(models.Model):
     description = models.CharField(max_length=150)
     established = models.CharField(max_length=4)
     languages = models.IntegerField()
-    sitelink = models.CharField(max_length=80)
-    applink = models.CharField(max_length=80, blank=True, null=True)
+    sitelink = models.CharField(max_length=250)
+    applink = models.CharField(max_length=250, blank=True, null=True)
 
     logofilename = models.CharField(max_length=50)
     bgimagefilename = models.CharField(max_length=50)
