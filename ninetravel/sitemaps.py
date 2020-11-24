@@ -1,14 +1,5 @@
 from django.contrib.sitemaps import Sitemap
-from main.models import Site, SiteProduct, Article
-
-
-class SiteSitemap(Sitemap):
-    changefreq = "daily"
-    priority = 0.5
-    protocol = 'https'
-
-    def items(self):
-        return Site.objects.all()
+from main.models import SiteProduct, Article
 
 
 class SiteProductSitemap(Sitemap):
