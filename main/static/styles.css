@@ -548,7 +548,7 @@ footer {
 }
 
 #title {
-    font-size: 30px;
+    font-size: 20px;
     padding: 10px 10px 0px 10px;
     color: #ff492c;
     font-weight: 600;
@@ -647,6 +647,7 @@ ul.topnav li.icon {display: none;}
     display: block;
     text-align: left;
   }
+  .pr20 {padding-right: 10px;}
   .tabcard {width:100%; margin:10px 0 10px 0}
   .mainwrapper {padding: 1rem;}
   .articlecard {width:100%; margin:10px 0 10px 0}
