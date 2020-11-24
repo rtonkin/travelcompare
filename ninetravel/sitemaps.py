@@ -1,5 +1,5 @@
 from django.contrib.sitemaps import Sitemap
-from .models import Site, SiteProduct, Article
+from main.models import Site, SiteProduct, Article
 from django.core.urlresolvers import reverse
 
 
