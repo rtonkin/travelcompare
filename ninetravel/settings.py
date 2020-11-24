@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
     'main',
 ]
 
@@ -127,5 +129,6 @@ STATICFILES_DIRS = (
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-
 django_heroku.settings(locals())
+
+SITE_ID = 1
