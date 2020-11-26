@@ -85,6 +85,9 @@ class SiteProduct(models.Model):
 
     link = models.CharField(max_length=200)
 
+    def get_absolute_url(self):
+        return '/travelsites/' + self.product.name.lower() + '/' + self.name.lower() + '/'
+
     def __str__(self):
         name = self.site.name + " " + self.product.name
         return name
