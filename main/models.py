@@ -113,6 +113,9 @@ class Article(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return '/articles/' + self.slug + '/'
+
 
 class Feature(models.Model):
     name = models.CharField(max_length=50)
