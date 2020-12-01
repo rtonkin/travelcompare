@@ -98,7 +98,7 @@ def userPanel(request):
 
 def getUserInfo(request):
     if request.method == "GET" and request.is_ajax():
-        username = request.GET.get("selection")
+        username = request.GET.get("username")
         try:
             user = User.objects.get(username=username)
         except:
