@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Site, Article, Feature, SiteProduct, Product
+from .models import Site, Article, Feature, SiteProduct, Product, DestinationGeo, OtaDestinationScore
 from dal import autocomplete
 from django.http import JsonResponse
 from django.contrib.auth.models import User
@@ -92,8 +92,8 @@ class MainPageAutocomplete(autocomplete.Select2QuerySetView):
 
 
 def userPanel(request):
-    usernames = User.objects.all().values("username")
-    return render(request, "user.html", {"usernames": usernames})
+    places = DestinationGeo.objects.all().values("name")
+    return render(request, "user.html", {"usernames": places})
 
 
 def getUserInfo(request):
