@@ -42,11 +42,8 @@
         <table class="table table-stripped table-fixed">
             <thead>
                 <tr>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                    <td>Email</td>
-                    <td>is_active</td>
-                    <td>Date Joined</td>
+                    <td>Name</td>
+                    <td>Type</td>
                 </tr>
             </thead>
             <tbody>
@@ -69,11 +66,8 @@
             data : data,
             success : function(response){
                 $("#user_info table tbody").html(`<tr>
-                    <td>${response.user_info.first_name || "-"}</td>
-                    <td>${response.user_info.last_name || "-"}</td>
-                    <td>${response.user_info.email || "-"}</td>
-                    <td>${response.user_info.is_active}</td>
-                    <td>${response.user_info.joined}</td>
+                    <td>${response.place_info.name || "-"}</td>
+                    <td>${response.place_info.type || "-"}</td>
                     </tr>`)
             },
             error : function(response){

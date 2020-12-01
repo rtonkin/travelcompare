@@ -98,17 +98,14 @@ def userPanel(request):
 
 def getUserInfo(request):
     if request.method == "GET" and request.is_ajax():
-        username = request.GET.get("selection")
+        place = request.GET.get("selection")
         try:
-            user = User.objects.get(username=username)
+            place = DestinationGeo.objects.get(name=place)
         except:
             return JsonResponse({"success": False}, status=400)
-        user_info = {
-            "first_name": user.first_name,
-            "last_name": user.last_name,
-            "email": user.email,
-            "is_active": user.is_active,
-            "joined": user.date_joined
+        place_info = {
+            "name": place.name,
+            "type": place.type,
         }
-        return JsonResponse({"user_info": user_info}, status=200)
+        return JsonResponse({"place_info": place_info}, status=200)
     return JsonResponse({"success":False}, status=400)
