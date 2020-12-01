@@ -61,8 +61,8 @@
     $(document).ready(function(){
        $("#users").change(function(e){
         e.preventDefault();
-        var username = $(this).val();
-        var data = {username};
+        var selection = $(this).val();
+        var data = {selection};
         $.ajax({
             type : 'GET',
             url :  "{% url 'get_user_info' %}",
