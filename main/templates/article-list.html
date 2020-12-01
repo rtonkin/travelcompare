@@ -31,9 +31,9 @@
             <div class="maincontent padded">
                 <div id="wrapper">
                     <div id="left" class="padded arts">
-                        <div class="title">
+                        <h1 class="title">
                             Articles
-                        </div>
+                        </h1>
                         {% for article in arts %}
                         <a href="{% url 'article' slug=article.slug %}"><div class="fwarticle"><img src="{% static article.thumbnailfilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{article.name}}</p><p id="text">{{article.text|truncatechars:120}}</p></div></a>
                         {% endfor %}

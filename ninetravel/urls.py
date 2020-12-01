@@ -17,4 +17,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('mainpage-autocomplete/', views.MainPageAutocomplete.as_view(), name='mainpage-autocomplete'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('user', views.userPanel),
+    path('ajax/get_user_info', views.getUserInfo, name='get_user_info'),
 ]

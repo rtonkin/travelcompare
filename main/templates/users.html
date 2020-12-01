@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "ga.html" %}
+        <title>About Us - Book Travel Better - Travel9.net</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link media="all" rel="stylesheet" href="{% static 'nessy_app-0bf6a8c96f.css' %}">
+        <link rel="stylesheet" href="{% static 'rebrand_overrides-8245b4a89e.css' %}">
+        <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
+        <meta name="keywords" content="travel9, travel9.net, book travel online"/>
+        <meta name="description" content="Travel9 helps users understand the online travel world, empowering them to make better decisions when it comes to choosing who to book travel with."/>
+    </head>
+
+    <body>
+
+    {% include "header.html" %}
+
+    <div class="container">
+       <div class="jumbotron">
+       <h1 class="text-center display-4">User Panel</h1>
+       <p class="lead text-center">This is sample example for integration of AJAX with Django</p>
+       <p class="lead text-center">GET the user details for selected user.
+         Please create some users(if not created)</p>
+       </div>
+       <div class="row justify-content-center align-items-center">
+       <div class="col-4">
+        <label>Select Username</label>
+        <select class="form-control" id = "users">
+            <option selected="true" disabled="disabled">Select user</option>
+            {% for uname in usernames %}
+                <option value = {{uname.username}}>{{uname.username}}</option>
+            {% endfor %}
+        </select>
+       </div>
+       <div class="col-9" id = "user_info">
+        <hr />
+        <table class="table table-stripped table-fixed">
+            <thead>
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Email</td>
+                    <td>is_active</td>
+                    <td>Date Joined</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+       </div>
+       </div>
+    </div>
+
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+       $("#users").change(function(e){
+        e.preventDefault();
+        var username = $(this).val();
+        var data = {username};
+        $.ajax({
+            type : 'GET',
+            url :  "{% url 'get_user_info' %}",
+            data : data,
+            success : function(response){
+                $("#user_info table tbody").html(`<tr>
+                    <td>${response.user_info.first_name || "-"}</td>
+                    <td>${response.user_info.last_name || "-"}</td>
+                    <td>${response.user_info.email || "-"}</td>
+                    <td>${response.user_info.is_active}</td>
+                    <td>${response.user_info.joined}</td>
+                    </tr>`)
+            },
+            error : function(response){
+                console.log(response)
+            }
+        })
+       })
+    })
+    </script>
+
+        {% include "footer.html" %}
+
+    </body>
+</html>
+
+
+
