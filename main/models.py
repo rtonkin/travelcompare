@@ -195,6 +195,9 @@ class DestinationGeo(models.Model):
     name = models.CharField(max_length=60)
     type = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.name
+
 
 class OtaDestinationScore(models.Model):
     ota = models.ForeignKey(Site, related_name='otas', on_delete=models.CASCADE,)
@@ -205,3 +208,6 @@ class OtaDestinationScore(models.Model):
     def totalscore(self):
         score = self.price + self.range
         return score
+
+    def __str__(self):
+        return self.destination.name + " " + self.ota.name
