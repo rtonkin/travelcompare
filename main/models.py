@@ -2,6 +2,7 @@ from django.db import models
 from datetime import date
 from django.dispatch import receiver
 from django.db.models.signals import pre_save, post_save
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Site(models.Model):
     name = models.CharField(max_length=50)
@@ -188,3 +189,19 @@ class Redirect(models.Model):
 class TrackingClick(models.Model):
     redirect = models.ForeignKey(Redirect, related_name='redirects',  on_delete=models.CASCADE,)
     datetime = models.DateTimeField(auto_now_add=True, null=True)
+
+
+class DestinationGeo(models.Model):
+    name = models.CharField(max_length=60)
+    type = models.CharField(max_length=30)
+
+
+class OtaDestinationScore(models.Model):
+    ota = models.ForeignKey(Site, related_name='otas', on_delete=models.CASCADE,)
+    destination = models.ForeignKey(DestinationGeo, related_name='geos', on_delete=models.CASCADE)
+    price = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
+    range = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
+
+    def totalscore(self):
+        score = self.price + self.range
+        return score

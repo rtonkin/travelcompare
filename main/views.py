@@ -100,9 +100,9 @@ def getUserInfo(request):
     if request.method == "GET" and request.is_ajax():
         username = request.GET.get("username")
         try:
-            user = User.objects.get(username = username)
+            user = User.objects.get(username=username)
         except:
-            return JsonResponse({"success":False}, status=400)
+            return JsonResponse({"success": False}, status=400)
         user_info = {
             "first_name": user.first_name,
             "last_name": user.last_name,
@@ -110,5 +110,5 @@ def getUserInfo(request):
             "is_active": user.is_active,
             "joined": user.date_joined
         }
-        return JsonResponse({"user_info":user_info}, status=200)
+        return JsonResponse({"user_info": user_info}, status=200)
     return JsonResponse({"success":False}, status=400)

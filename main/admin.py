@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Site, Article, Feature, Product, SiteProduct, PricingRecord, Price, Redirect, TrackingClick
+from .models import Site, Article, Feature, Product, SiteProduct, PricingRecord, Price, Redirect, TrackingClick, DestinationGeo, OtaDestinationScore
 
 # Register your models here.
 
@@ -18,3 +18,5 @@ admin.site.register(PricingRecord, PricingRecordAdmin)
 admin.site.register(Price)
 admin.site.register(Redirect)
 admin.site.register(TrackingClick)
+admin.site.register(DestinationGeo)
+admin.site.register(OtaDestinationScore)
