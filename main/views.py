@@ -92,13 +92,13 @@ class MainPageAutocomplete(autocomplete.Select2QuerySetView):
 
 
 def userPanel(request):
-    usernames = User.objects.all().values("selection")
+    usernames = User.objects.all().values("username")
     return render(request, "user.html", {"usernames": usernames})
 
 
 def getUserInfo(request):
     if request.method == "GET" and request.is_ajax():
-        username = request.GET.get("username")
+        username = request.GET.get("selection")
         try:
             user = User.objects.get(username=username)
         except:
