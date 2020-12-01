@@ -32,8 +32,8 @@
         <label>Select Username</label>
         <select class="form-control" id = "users">
             <option selected="true" disabled="disabled">Select user</option>
-            {% for uname in usernames %}
-                <option value = {{uname.username}}>{{uname.username}}</option>
+            {% for place in places %}
+                <option value = {{place.name}}>{{place.name}}</option>
             {% endfor %}
         </select>
        </div>

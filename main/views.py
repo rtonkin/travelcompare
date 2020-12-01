@@ -93,7 +93,7 @@ class MainPageAutocomplete(autocomplete.Select2QuerySetView):
 
 def userPanel(request):
     places = DestinationGeo.objects.all().values("name")
-    return render(request, "user.html", {"usernames": places})
+    return render(request, "user.html", {"places": places})
 
 
 def getUserInfo(request):
