@@ -9,6 +9,11 @@ class PricingRecordAdmin(admin.ModelAdmin):
     list_filter = ('site',)
 
 
+class DestinationGeoAdmin(admin.ModelAdmin):
+    list_display = ('name', 'type')
+    list_filter = ('type',)
+
+
 admin.site.register(Site)
 admin.site.register(Article)
 admin.site.register(Feature)
@@ -18,5 +23,5 @@ admin.site.register(PricingRecord, PricingRecordAdmin)
 admin.site.register(Price)
 admin.site.register(Redirect)
 admin.site.register(TrackingClick)
-admin.site.register(DestinationGeo)
+admin.site.register(DestinationGeo, DestinationGeoAdmin)
 admin.site.register(OtaDestinationScore)
