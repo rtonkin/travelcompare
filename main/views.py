@@ -100,12 +100,10 @@ def getUserInfo(request):
     if request.method == "GET" and request.is_ajax():
         place = request.GET.get("selection")
         try:
-            place = DestinationGeo.objects.get(name=place)
+            place = OtaDestinationScore.objects.filter(destination__name=place)
         except:
             return JsonResponse({"success": False}, status=400)
-        place_info = {
-            "name": place.name,
-            "type": place.type,
-        }
-        return JsonResponse({"place_info": place_info}, status=200)
-    return JsonResponse({"success":False}, status=400)
+        data = list(place.values())
+        print(data)
+        return JsonResponse({"data": data}, status=200)
+    return JsonResponse({"success": False}, status=400)

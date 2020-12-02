@@ -32,9 +32,9 @@
         <label>Select Username</label>
         <select class="form-control" id = "users">
             <option selected="true" disabled="disabled">Select user</option>
-            {% for place in places %}
-                <option value = {{place.name}}>{{place.name}}</option>
-            {% endfor %}
+                    {% for ota in data %}
+                        <option value = {{place.name}}>{{place.name}}</option>
+                    {% endfor %}
         </select>
        </div>
        <div class="col-9" id = "user_info">
