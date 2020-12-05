@@ -65,12 +65,6 @@
             url :  "{% url 'get_user_info' %}",
             data : data,
             success : function(response){
-                $("#user_info table tbody").html(`<tr>
-                    <td>${response.place_info.name || "-"}</td>
-                    <td>${response.place_info.type || "-"}</td>
-                    </tr>`)
-            },
-            error : function(response){
                 console.log(response)
             }
         })
