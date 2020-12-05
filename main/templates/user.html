@@ -66,7 +66,7 @@
             data : data,
             success : function(response){
                         for(var i=0; i<3; i++) {
-                $('#user_info table tbody').append('<tr><td>'+response[i].id+'</td><td>'+response[i].range+'</td><td>'+response[i].price+'</td></tr>');
+                $('#user_info table tbody').append('<tr><td>'+response[i].range+'</td><td>'+response[i].price+'</td></tr>');
                 };
                 console.log(response);
             },
