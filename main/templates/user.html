@@ -65,7 +65,13 @@
             url :  "{% url 'get_user_info' %}",
             data : data,
             success : function(response){
-                console.log(response)
+                        for(var i=0; i<3; i++) {
+                $('#user_info table tbody').append('<tr><td>'+response[i].id+'</td><td>'+response[i].range+'</td><td>'+response[i].price+'</td></tr>');
+                };
+                console.log(response);
+            },
+            error : function(response){
+                )console.log(response)
             }
         })
        })
