@@ -30,6 +30,21 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
     padding: 0;
 }
 
+h1,h2,h3
+    {color:#505059;
+    font-family:"Barlow",sans-serif;
+    font-size:.9375rem;
+    font-weight:400;
+    margin:0
+}
+
+input{
+    font-weight:400
+}
+
+p{margin-bottom:.75rem}[type='text']{font-size:16px;font-size:1rem;font-family:"Barlow",sans-serif;color:#252530}[type='text']:focus,[type='text']:active{border-color:#2690ce}
+
+
 .maincontent{
     background-color: white;
     display: inline-block;
