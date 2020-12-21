@@ -679,11 +679,12 @@ ul.topnav li.icon {display: none;}
   .herotitle {font-size: 2.3rem}
   .herosubtitle {font-size: 1rem; margin: 1.5rem}
   .herosearch {width:90%}
+  .heroheader {max-width:90%;padding-top:2.5rem}
   .bgimage {display: none}
   .bgimagecontainer {height:412px}
-  .bgheaderbody {height:412px}
   .iconsmenu {margin: 0}
   .wrapper {display:inline-block}
+  .bgheaderbody {height: auto}
   .bgheaderbodysite {height: 200px}
   .bgimagecontainersite {height: 200px}
   .padded {padding: 5px}
