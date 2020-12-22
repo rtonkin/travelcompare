@@ -16,23 +16,17 @@
 
     {% include "header.html" %}
 
-        <div class="bgheader bgheaderd">
-            <div class="bgheaderbodysite" style="text-align:center">
-                <div class="bgimagecontainersite">
-                    <div class="bgimage" style="background-image: url({% static article.backgroundfilename %});"></div>
-                </div>
-            </div>
-        </div>
 
         <div class="mainwrapper">
 
             <div class="maincontent padded">
                 <div class="wrapper">
                     <div id="left" class="padded">
+                        <p class="herotitle">Questions & Answers</p>
                         <h1 class="title">
                             {{data.question}}
                         </h1>
-                        {{data.answer|linebreaks}}
+                        {{data.answer|linebreaks}}<br/>
                         <h6>Something wrong here? Let us know</h6>
                     </div>
                 </div>
