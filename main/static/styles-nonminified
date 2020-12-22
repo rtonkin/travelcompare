@@ -442,7 +442,6 @@ p{
     background: transparent;
     border: 0;
     height: 42px;
-    margin: 0 0 1rem;
     padding-left: 2.25rem;
     padding-right: 2.25rem;
     width: 100%;
@@ -706,5 +705,4 @@ ul.topnav li.icon {display: none;}
   .bigicon {font-size: 2rem}
   .titleonbg {line-height: 200px;font-size: 56px;font-weight: 600;color: black;}
   .bt-short {width:auto;padding:6px;display:inline-block;margin: 0 10px 3px 0;}
-  .searchinput {margin: 0}
 }
