@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "ga.html" %}
+        <title>{{data.question}} - 9Travel.net</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="keywords" content="{{article.seokeywords}}"/>
+        <meta name="description" content="{{article.seodescription}}"/>
+    </head>
+
+    <body>
+
+    {% include "header.html" %}
+
+        <div class="bgheader bgheaderd">
+            <div class="bgheaderbodysite" style="text-align:center">
+                <div class="bgimagecontainersite">
+                    <div class="bgimage" style="background-image: url({% static article.backgroundfilename %});"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainwrapper">
+
+            <div class="maincontent padded">
+                <div class="wrapper">
+                    <div id="left" class="padded">
+                        <h1 class="title">
+                            {{data.question}}
+                        </h1>
+                        {{article.answer|linebreaks}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+</html>
+                

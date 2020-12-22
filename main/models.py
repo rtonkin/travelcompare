@@ -211,3 +211,14 @@ class OtaDestinationScore(models.Model):
 
     def __str__(self):
         return self.destination.name + " " + self.ota.name
+
+
+class qAndA(models.Model):
+    question = models.CharField(max_length=250)
+    answer = models.TextField(max_length=4000)
+    slug = models.SlugField(max_length=100)
+    ota = models.ForeignKey(Site, related_name='qasites', on_delete=models.CASCADE, blank=True, null=True)
+    product = models.ForeignKey(Product, related_name='qaproducts', on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return self.question

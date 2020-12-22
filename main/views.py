@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Site, Article, Feature, SiteProduct, Product, DestinationGeo, OtaDestinationScore
+from .models import Site, Article, Feature, SiteProduct, Product, DestinationGeo, OtaDestinationScore, qAndA
 from dal import autocomplete
 from django.http import JsonResponse
 from django.contrib.auth.models import User
@@ -107,3 +107,8 @@ def getUserInfo(request):
         print(data)
         return JsonResponse({"data": data}, status=200)
     return JsonResponse({"success": False}, status=400)
+
+def questionAnswer(request, slug):
+    data = qAndA.objects.get(slug=slug)
+
+    return render(request, 'main/templates/questionanswer.html', {'data': data})
