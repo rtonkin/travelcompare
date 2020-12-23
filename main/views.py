@@ -112,6 +112,6 @@ def getUserInfo(request):
 def questionAnswer(request, slug):
     data = qAndA.objects.get(slug=slug)
     ota = data.ota
-    otherquestions = qAndA.objects.filter(Q(slug=slug), Q(ota=ota))
+    otherquestions = qAndA.objects.filter(Q(ota=ota), ~Q(slug=slug))
 
     return render(request, 'main/templates/questionanswer.html', {'data': data, 'otherquestions': otherquestions})
