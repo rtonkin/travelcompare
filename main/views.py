@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Site, Article, Feature, SiteProduct, Product, DestinationGeo, OtaDestinationScore, qAndA
 from dal import autocomplete
 from django.http import JsonResponse
-from django.contrib.auth.models import User
+from django.db.models import Q
 
 
 def index(request):
@@ -108,7 +108,10 @@ def getUserInfo(request):
         return JsonResponse({"data": data}, status=200)
     return JsonResponse({"success": False}, status=400)
 
+
 def questionAnswer(request, slug):
     data = qAndA.objects.get(slug=slug)
+    ota = data.ota
+    otherquestions = qAndA.objects.filter(Q(slug=slug), Q(ota=ota))
 
-    return render(request, 'main/templates/questionanswer.html', {'data': data})
+    return render(request, 'main/templates/questionanswer.html', {'data': data, 'otherquestions': otherquestions})

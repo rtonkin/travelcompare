@@ -29,6 +29,11 @@
                         {{data.answer|linebreaks}}<br/>
                         <h6>Something wrong here? Let us know</h6><br/>
                         <h1 class="title">More Questions About {{data.ota.name}}</h1>
+                        {% for q in otherquestions %}
+                            <p>{{q.question}}</p>
+                            <p>{{q.answer}}</p>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
