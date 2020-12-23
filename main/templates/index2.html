@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        {% include "ga.html" %}
+        <title>Compare Online Travel Sites and Get the Best Deal - 9Travel.net</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="keywords" content="online travel sites, best hotel site, best flight site, best travel app"/>
+        <meta name="description" content="Make sure you are getting the best deal when you're booking online travel. Compare all online travel sites and apps to find the one which suits you best."/>
+    </head>
+
+    <body>
+    <script>function rudrSwitchTab(rudr_tab_id, rudr_tab_content) {
+	var x = document.getElementsByClassName("tabcontent");
+	var i;
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = 'none'; // hide all tab content
+	}
+	document.getElementById(rudr_tab_content).style.display = 'block';
+	var x = document.getElementsByClassName("tabmenu");
+	var i;
+	for (i = 0; i < x.length; i++) {
+		x[i].className = 'tabmenu';
+	}
+	document.getElementById(rudr_tab_id).className = 'tabmenu active';
+}   </script>
+
+    {% include "header.html" %}
+
+        <div class="bgheader bgheaderd">
+            <div class="bgheaderbody">
+
+                <div class="bgimagecontainer">
+                    <div class="bgimage" style="background-image: url({% static 'homebg.jpg' %});"></div>
+                </div>
+
+                <div class="bgheadercontent">
+
+                    <div class="heroheader">
+                        <h1 class="herotitle">Book Travel. Book Better.</h1>
+                        <h2 class="herosubtitle"><div>Compare <span class="herosubtitlespan">online travel agencies</span> and learn how to get a deal which suits you.</div></h2>
+                        <div class="herosearch">
+                            <form class="searchcontainer" action="/search" accept-charset="UTF-8" method="get">
+                                <input name="utf8" type="hidden" value="✓">
+                                <div class="searchbox">
+                                        <input type="text" value="" autocomplete="off" placeholder="Enter online travel booking site name" class="searchinput searchleft" spellcheck="false" style="position: relative; vertical-align: top;">
+                                </div>
+                                <button name="button" type="submit" class="searchright"><div>Search</div></button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mainwrapper">
+
+            <div id="trainsearch">
+                <label class="content-content">Booking:
+                    <select id="dropdown1">
+                        <option disabled selected value="">Please Choose...</option>
+                      {% for p in prods %}}
+                        <option value="{{ p }}">{{ p }}</option>
+                      {% endfor %}
+                    </select>
+                </label>
+
+                <label class="content-content">Destination:
+                    <select id="dropdown2">
+                        <option disabled selected value="">Please Choose...</option>
+                      {% for s in sites %}}
+                        <option value="{{ s }}">{{ s }}</option>
+                      {% endfor %}
+                    </select>
+                    <button id="go" onclick="gotosite()">Check</button>
+                </label>
+
+            </div>
+
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+
+    <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+
+</html>

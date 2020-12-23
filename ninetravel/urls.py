@@ -9,6 +9,7 @@ sitemaps = {'siteproducts': SiteProductSitemap, 'articles': ArticleSitemap}
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('', views.index2, name='index2'),
     path('travelsites/<product>/<sitea>-vs-<siteb>/', views.sitecomparison, name='comparison'),
     path('travelsites/features/<slug>/', views.featurecomparison, name='feature'),
     path('travelsites/<product>/<slug>/', views.site, name='site'),
