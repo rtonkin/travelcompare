@@ -25,6 +25,11 @@
 	}
 	document.getElementById(rudr_tab_id).className = 'tabmenu active';
 }   </script>
+    <script>
+      function gotosite() {
+        var dd1 = document.getElementById("dropdown1").value; var dd2 = document.getElementById("dropdown2").value;
+        window.location = "https://www.9travel.net/trains/"+dd1.toLowerCase()+"-to-"+dd2.toLowerCase()+"/"}
+    </script>
 
     {% include "header.html" %}
 
