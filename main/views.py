@@ -25,7 +25,7 @@ def index2(request):
 
     otas = Site.objects.all()
     sites = []
-    for s in sites:
+    for s in otas:
         sites.append(s.name)
 
     return render(request, 'main/templates/index2.html', {'bookingsites': bookingsites, 'articles': articles, 'prods': prods, 'sites': sites})
