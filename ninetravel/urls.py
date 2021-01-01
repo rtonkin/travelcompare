@@ -16,6 +16,7 @@ urlpatterns = [
     path('articles/all/', views.allarticles, name='allarticles'),
     path('articles/<slug>/', views.article, name='article'),
     path('questions/<slug>/', views.questionAnswer, name='questions'),
+    path('recommendations/beijing/', views.rec_beijing, name='recbj'),
     path('about/', views.about, name='about'),
     path('mainpage-autocomplete/', views.MainPageAutocomplete.as_view(), name='mainpage-autocomplete'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
