@@ -53,6 +53,17 @@ p{
     top: 250px;
 }
 
+.comparebox{
+    max-width: 1260px;
+    background-color: white;
+    display: inline-block;
+    margin: 0;
+    width: 80%;
+    text-align: left;
+    position: relative;
+    z-index: 100;
+}
+
 .comparisonlogobox {
     max-width: 1260px;
     background-color: white;
