@@ -63,7 +63,13 @@ def article(request, slug):
 
 def rec_beijing(request):
 
-    return render(request, 'main/templates/rec_beijing.html')
+    trip = Site.objects.get(slug='tripcom')
+    expedia = Site.objects.get(slug='expedia')
+    hotels = Site.objects.get(slug='hotelscom')
+    booking = Site.objects.get(slug='booking')
+    agoda = Site.objects.get(slug='agoda')
+
+    return render(request, 'main/templates/rec_beijing.html', {'trip': trip, 'expedia': expedia, 'hotels': hotels, 'booking': booking, 'agoda': agoda})
 
 
 def featurecomparison(request, slug):

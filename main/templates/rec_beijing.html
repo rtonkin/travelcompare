@@ -25,8 +25,71 @@
                         <p class="herotitle">I want to book a hotel in Beijing</p>
                         <p>Based on our extensive data, we’ve compiled a list of the best sites to book hotels in Beijing. While you might think that booking with any online travel agency is the same, that’s probably not the case. There are a significant amount of differences in the offering of each OTA, especially when it comes to boking in China. Not all of the the sites have their our China inventory, which means that when booking through one site, you might actually be booking through another. </p>
                         <p>Whether you’re looking to stay in the busy CBD area in Chaoyang, somewhere with easy access to the Forbidden city, or perhaps in a classic Hutong, these results apply to you. Of course if you have all the time in the world, it’s best to compare each site, as unfortunately there is no one site which is better than the others 100% of the time.</p>
+
                         <h1 class="title">We Recommend</h1>
+                        <div class="namebox">
+                            <div class="flex-container orangeborder">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static site.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ trip.name }}<br>
+                                </div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{trip.link}}"><button class="bt">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div>
+
                         <h1 class="title">Other Recommendations:</h1>
+                        <div class="namebox">
+                            <div class="flex-container">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static site.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ booking.name }}<br>
+                                </div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{booking.link}}"><button class="bt">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="flex-container">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static site.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ agoda.name }}<br>
+                                </div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{agoda.link}}"><button class="bt">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="flex-container">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static site.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ expedia.name }}<br>
+                                </div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{expedia.link}}"><button class="bt">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="namebox">
+                            <div class="flex-container">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static site.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ hotels.name }}<br>
+                                </div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{hotels.link}}"><button class="bt">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
