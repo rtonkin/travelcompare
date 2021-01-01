@@ -748,6 +748,8 @@ ul.topnav li.icon {display: none;}
   .heroheader {max-width:90%;padding-top:2.5rem}
   .bgimage {display: none}
   .bgimagecontainer {height:412px}
+  .bgheader {display: none}
+  .bgheaderd {display: none}
   .iconsmenu {margin: 0}
   .wrapper {display:inline-block}
   .bgheaderbody {height: auto}
