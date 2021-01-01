@@ -72,6 +72,39 @@ def rec_beijing(request):
     return render(request, 'main/templates/rec_beijing.html', {'trip': trip, 'expedia': expedia, 'hotels': hotels, 'booking': booking, 'agoda': agoda})
 
 
+def rec_shanghai(request):
+
+    trip = Site.objects.get(slug='tripcom')
+    expedia = Site.objects.get(slug='expedia')
+    hotels = Site.objects.get(slug='hotelscom')
+    booking = Site.objects.get(slug='booking')
+    agoda = Site.objects.get(slug='agoda')
+
+    return render(request, 'main/templates/rec_shanghai.html', {'trip': trip, 'expedia': expedia, 'hotels': hotels, 'booking': booking, 'agoda': agoda})
+
+
+def rec_guangzhou(request):
+
+    trip = Site.objects.get(slug='tripcom')
+    expedia = Site.objects.get(slug='expedia')
+    hotels = Site.objects.get(slug='hotelscom')
+    booking = Site.objects.get(slug='booking')
+    agoda = Site.objects.get(slug='agoda')
+
+    return render(request, 'main/templates/rec_guangzhou.html', {'trip': trip, 'expedia': expedia, 'hotels': hotels, 'booking': booking, 'agoda': agoda})
+
+
+def rec_shenzhen(request):
+
+    trip = Site.objects.get(slug='tripcom')
+    expedia = Site.objects.get(slug='expedia')
+    hotels = Site.objects.get(slug='hotelscom')
+    booking = Site.objects.get(slug='booking')
+    agoda = Site.objects.get(slug='agoda')
+
+    return render(request, 'main/templates/rec_shenzhen.html', {'trip': trip, 'expedia': expedia, 'hotels': hotels, 'booking': booking, 'agoda': agoda})
+
+
 def featurecomparison(request, slug):
 
     feature = get_object_or_404(Feature, slug=slug)

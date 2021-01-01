@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "ga.html" %}
+        <title>Best Sites to Book Shanghai Hotels - 9Travel.net</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="keywords" content="{{article.seokeywords}}"/>
+        <meta name="description" content="{{article.seodescription}}"/>
+    </head>
+
+    <body>
+
+    {% include "header.html" %}
+
+
+        <div class="mainwrapper">
+
+            <div class="maincontent padded">
+                <div class="wrapper">
+                    <div id="left" class="padded">
+                        <p class="herotitle">I want to book a hotel in Shanghai</p>
+                        <p>Based on our extensive data, we’ve compiled a list of the best sites to book hotels in Shanghai. While you might think that booking with any online travel agency is the same, that’s probably not the case. There are a significant amount of differences in the offering of each OTA, especially when it comes to boking in China. Not all of the the sites have their our China inventory, which means that when booking through one site, you might actually be booking through another. </p><br>
+                        <p>Whether you’re looking to stay in the busy CBD area in Chaoyang, somewhere with easy access to the Forbidden city, or perhaps in a classic Hutong, these results apply to you. Of course if you have all the time in the world, it’s best to compare each site, as unfortunately there is no one site which is better than the others 100% of the time.</p><br>
+
+                        <h1 class="bigtitle">We Recommend</h1>
+                        <div class="nameboxouter">
+                            <div class="flex-container orangeborder">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static trip.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ trip.name }}<br><a class="fullreviewlink" href="{% url 'site' slug=trip.slug product='hotels' %}">Read Full Review</a></div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{trip.sitelink}}"><button class="bt90">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div><br><br>
+
+                        <h1 class="bigtitle">Other Recommendations:</h1>
+                        <div class="nameboxouter">
+                            <div class="flex-container">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static booking.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ booking.name }}<br><a class="fullreviewlink" href="{% url 'site' slug=booking.slug product='hotels' %}">Read Full Review</a></div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{booking.sitelink}}"><button class="bt90">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nameboxouter">
+                            <div class="flex-container">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static agoda.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ agoda.name }}<br><a class="fullreviewlink" href="{% url 'site' slug=agoda.slug product='hotels' %}">Read Full Review</a></div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{agoda.sitelink}}"><button class="bt90">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nameboxouter">
+                            <div class="flex-container">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static expedia.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ expedia.name }}<br><a class="fullreviewlink" href="{% url 'site' slug=expedia.slug product='hotels' %}">Read Full Review</a></div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{expedia.sitelink}}"><button class="bt90">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nameboxouter">
+                            <div class="flex-container">
+                                <div class="sitelogo greyborder" style="flex-grow: 2">
+                                    <img src="{% static hotels.logofilename %}">
+                                </div>
+                                <div class="sitename" style="flex-grow: 8">{{ hotels.name }}<br><a class="fullreviewlink" href="{% url 'site' slug=hotels.slug product='hotels' %}">Read Full Review</a></div>
+                                <div style="flex-grow: 1" class="padded">
+                                    <a href="{{hotels.sitelink}}"><button class="bt90">Check Prices</button></a>
+                                </div>
+                            </div>
+                        </div><br><br>
+
+                        <h1 class="bigtitle">How to choose?</h1>
+                        <p>Price is going to be the deciding factor for most people. While often prices are relatively similar across travel sites, it’s not entirely unusual to see a huge discount on one site as they’ve done a special limited-time deal directly with the hotel. Certain travel sites have better prices in certain regions, but there’s no site which can deliver the cheapest price 100% of the time so it pays to look around.</p><br>
+                        <p>Whether or not a travel site has good availability in the region you’re looking to travel to is also very important. You can often find that some sites have more than double the amount of hotels available in a particular city when compared with others. But the number of hotels isn’t everything, whether or not they actually have available rooms to book is very important. Sometimes travel sites will “bulk purchase” rooms at a hotel, which might mean that they still have availability after other sites have sold out.</p><br>
+                        <p>Check for any hidden fees like booking fees when you’re booking. Luckily, none of the major players are charging booking fees these days however some of the smaller sites do. Make you you’re compare apples with apples when you’re looking at the final price. Also, which payment methods the site accepts might be important. While everyone accepts MasterCard and Visa, if you’re looking to pay with PayPal, Google Pay or Apple Pay your options might be more limited. Check our reviews to get a comprehensive list of who accepts which payment methods.</p><br>
+                        <p>The cancellation policy is also something you need to consider. While a lot of rooms are offered with free cancellation these days, don’t take it as a given. Different sites might list the same room with different policies, while other sites will offer a room with a choice of policies, so make sure you check before you click!</p><br>
+                        <p>Finally, reputation is of course very important. Some sites just haven a much better reputation when it comes to looking after their customers, although they’re all far from perfect. Lots of online review sites like Trustpilot offer reviews of these sites however they’re to be taken with a grain of salt. Some travel sites actively try to encourage good reviews from their customer whereas others don’t pay too much attention to these sites and instead let their product do the talking.</p><br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+</html>
