@@ -152,6 +152,12 @@ p{
     padding-bottom: 0.85rem;
 }
 
+.bigtitle{
+    font-size: 3rem;
+    font-weight: 600;
+    padding-bottom: 0.85rem;
+}
+
 .fullwd{
     width:100%;
 }
