@@ -709,6 +709,7 @@ ul.topnav li.icon {display: none;}
   }
   .pr20 {padding-right: 10px;}
   .bigtitle {font-size: 2rem}
+  .sitename {font-size:1.5rem; padding:0 5px 0 5px}
   .tabcard {width:100%; margin:10px 0 10px 0}
   .mainwrapper {padding: 1rem;}
   .articlecard {width:100%; margin:10px 0 10px 0}
