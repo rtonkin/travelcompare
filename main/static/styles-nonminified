@@ -64,6 +64,17 @@ p{
     z-index: 100;
 }
 
+.nameboxouter{
+    max-width: 1260px;
+    background-color: white;
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    z-index: 100;
+}
+
 .comparisonlogobox {
     max-width: 1260px;
     background-color: white;
@@ -78,7 +89,7 @@ p{
 }
 
 .fullreviewlink {
-    font-size: 30px;
+    font-size: 20px;
     color: #ff492c;
 }
 
