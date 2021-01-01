@@ -61,6 +61,11 @@ def article(request, slug):
     return render(request, 'main/templates/article-details.html', {'article': article, 'allsites': allsites})
 
 
+def rec_beijing(request):
+
+    return render(request, 'main/templates/rec_beijing.html')
+
+
 def featurecomparison(request, slug):
 
     feature = get_object_or_404(Feature, slug=slug)
