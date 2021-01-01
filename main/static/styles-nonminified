@@ -77,6 +77,12 @@ p{
     text-align: center;
 }
 
+.fullreviewlink {
+    font-size: 30px;
+    color: #ff492c;
+}
+
+
 .fiftyhigh {
     max-height: 50px;
     margin: 10px;
