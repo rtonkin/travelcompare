@@ -15,6 +15,7 @@ urlpatterns = [
     path('travelsites/<product>/<slug>/', views.site, name='site'),
     path('articles/all/', views.allarticles, name='allarticles'),
     path('articles/<slug>/', views.article, name='article'),
+    path('questions/tag/<slug>/', views.questionAnswerTag, name='questionstag'),
     path('questions/<slug>/', views.questionAnswer, name='questions'),
     path('recommendations/beijing/', views.rec_beijing, name='recbj'),
     path('recommendations/shanghai/', views.rec_shanghai, name='recsh'),

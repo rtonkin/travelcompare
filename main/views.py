@@ -179,3 +179,9 @@ def questionAnswer(request, slug):
     tags = data.tags.all()
 
     return render(request, 'main/templates/questionanswer.html', {'data': data, 'otherquestions': otherquestions, 'tags': tags})
+
+
+def questionAnswerTag(request, slug):
+    data = qAndA.objects.filter(tag=slug)
+
+    return render(request, 'main/templates/questionanswer-tag.html', {'data': data})

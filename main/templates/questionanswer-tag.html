@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "ga.html" %}
+        <title> - 9Travel.net</title>
+        <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="keywords" content="{{article.seokeywords}}"/>
+        <meta name="description" content="{{article.seodescription}}"/>
+    </head>
+
+    <body>
+
+    {% include "header.html" %}
+
+
+        <div class="mainwrapper">
+
+            <div class="maincontent padded">
+                <div class="wrapper">
+                    <div id="left" class="padded">
+                        <p class="herotitle">Questions & Answers</p>
+                        {% for q in data %}
+                            <h4>{{q.question}}</h4>
+                            <p>{{q.answer}}</p><br/>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+</html>
