@@ -712,6 +712,10 @@ footer {
    border-left-color: #e86138;
 }
 
+.q {
+  column-count: 2
+}
+
 .hpquestion {
   color: #e86138;
   font-weight: 400;
@@ -823,6 +827,7 @@ ul.topnav li.icon {display: none;}
   .namebox {display:none}
   .mobilenb {display:inline-block}
   .bt {width:auto}
+  .q {column-count: 1}
   .bt90 {max-width:90px}
   .skillsweb {display:none}
   .skillsmobile {display:inline-block; width:100%}
