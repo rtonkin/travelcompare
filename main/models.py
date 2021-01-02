@@ -228,6 +228,7 @@ class qAndA(models.Model):
     ota = models.ForeignKey(Site, related_name='qasites', on_delete=models.CASCADE, blank=True, null=True)
     product = models.ForeignKey(Product, related_name='qaproducts', on_delete=models.CASCADE, blank=True, null=True)
     tags = models.ManyToManyField(qAndATag, blank=True)
+    datetime = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.question
