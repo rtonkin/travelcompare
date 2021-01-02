@@ -110,6 +110,12 @@
                 </div>
             </div>
 
+            <div class="qanda">
+                {% for q in questions %}
+                <a href="{% url 'questions' slug=q.slug %}">{{ q.question }}</a>
+                {% endfor %}
+            </div>
+
         </div>
 
         {% include "footer.html" %}

@@ -9,8 +9,9 @@ def index(request):
 
     bookingsites = Site.objects.all()
     articles = Article.objects.all()
+    questions = qAndA.objects.all().order_by('datetime')[:9]
 
-    return render(request, 'main/templates/index.html', {'bookingsites': bookingsites, 'articles': articles})
+    return render(request, 'main/templates/index.html', {'bookingsites': bookingsites, 'articles': articles, 'questions': questions})
 
 
 def index2(request):
