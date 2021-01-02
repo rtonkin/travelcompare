@@ -3,7 +3,7 @@
 <html>
     <head>
         {% include "ga.html" %}
-        <title> - 9Travel.net</title>
+        <title>{{ tag.name }} Questions & Answers - 9Travel.net</title>
         <link rel="stylesheet" media="all" href="{% static 'styles.css' %}">
         <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/f80b51e3c0.js" crossorigin="anonymous"></script>
@@ -18,15 +18,18 @@
 
 
         <div class="mainwrapper">
-
             <div class="maincontent padded">
                 <div class="wrapper">
                     <div id="left" class="padded">
-                        <p class="herotitle">Questions & Answers</p>
-                        <h1 class="title">{{ tag.name }}</h1>
+                        <p class="herotitle">{{ tag.name }} Questions & Answers</p>
                         {% for q in data %}
                             <h4>{{q.question}}</h4>
                             <p>{{q.answer}}</p><br/>
+                            <ul class="tags">
+                                {% for t in q.tags %}
+                                <li><a href="#" class="tag">{{ t.name }}</a></li>
+                                {% endfor %}
+                            </ul>
                         {% endfor %}
                     </div>
                 </div>
