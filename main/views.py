@@ -175,6 +175,6 @@ def questionAnswer(request, slug):
     data = qAndA.objects.get(slug=slug)
     ota = data.ota
     otherquestions = qAndA.objects.filter(Q(ota=ota), ~Q(slug=slug))
-    tags = data.tags.all()
+    tags = data.tags
 
     return render(request, 'main/templates/questionanswer.html', {'data': data, 'otherquestions': otherquestions, 'tags': tags})
