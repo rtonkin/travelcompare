@@ -23,6 +23,7 @@
                 <div class="wrapper">
                     <div id="left" class="padded">
                         <p class="herotitle">Questions & Answers</p>
+                        <h1 class="title">{{ tag.name }}</h1>
                         {% for q in data %}
                             <h4>{{q.question}}</h4>
                             <p>{{q.answer}}</p><br/>

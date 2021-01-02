@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Site, Article, Feature, SiteProduct, Product, DestinationGeo, OtaDestinationScore, qAndA
+from .models import Site, Article, Feature, SiteProduct, Product, DestinationGeo, OtaDestinationScore, qAndA, qAndATag
 from dal import autocomplete
 from django.http import JsonResponse
 from django.db.models import Q
@@ -183,5 +183,6 @@ def questionAnswer(request, slug):
 
 def questionAnswerTag(request, slug):
     data = qAndA.objects.filter(tags__slug=slug)
+    tag = qAndATag.objects.get(slug=slug)
 
-    return render(request, 'main/templates/questionanswer-tag.html', {'data': data})
+    return render(request, 'main/templates/questionanswer-tag.html', {'data': data, 'tag': tag})
