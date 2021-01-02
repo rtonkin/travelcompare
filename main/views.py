@@ -9,7 +9,6 @@ def index(request):
 
     bookingsites = Site.objects.all()
     articles = Article.objects.all()
-    questions = qAndA.objects.flter
 
     return render(request, 'main/templates/index.html', {'bookingsites': bookingsites, 'articles': articles})
 
