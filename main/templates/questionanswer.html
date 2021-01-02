@@ -27,9 +27,11 @@
                             {{data.question}}
                         </h1>
                         {{data.answer|linebreaks}}<br/>
-                        {% for t in tags %}
-                        <p>{{ t.name }}</p>
-                        {% endfor %}
+                        <ul class="tags">
+                            {% for t in tags %}
+                            <li><a href="#" class="tag">{{ t.name }}</a></li>
+                            {% endfor %}
+                        </ul>
                         <h6>Something wrong here? Let us know</h6><br/>
                         <h1 class="title">More Questions About {{data.ota.name}}</h1>
                         {% for q in otherquestions %}
