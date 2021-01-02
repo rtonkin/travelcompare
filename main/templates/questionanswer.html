@@ -29,7 +29,7 @@
                         {{data.answer|linebreaks}}<br/>
                         <ul class="tags">
                             {% for t in tags %}
-                            <li><a href="#" class="tag">{{ t.name }}</a></li>
+                            <li><a href="{% url 'questions' slug=q.slug %}" class="tag">{{ t.name }}</a></li>
                             {% endfor %}
                         </ul>
                         <h6>Something wrong here? Let us know</h6><br/>
