@@ -26,7 +26,7 @@
                             <h4>{{q.question}}</h4>
                             <p>{{q.answer}}</p><br/>
                             <ul class="tags">
-                                {% for t in q.tags %}
+                                {% for t in q.tags.all %}
                                 <li><a href="#" class="tag">{{ t.name }}</a></li>
                                 {% endfor %}
                             </ul>
