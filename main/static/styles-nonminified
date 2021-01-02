@@ -704,12 +704,12 @@ footer {
 }
 
 .tag:hover {
-  background-color: crimson;
+  background-color: #e86138;
   color: white;
 }
 
 .tag:hover::after {
-   border-left-color: crimson;
+   border-left-color: #e86138;
 }
 
 .bpadding {
