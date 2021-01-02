@@ -182,6 +182,6 @@ def questionAnswer(request, slug):
 
 
 def questionAnswerTag(request, slug):
-    data = qAndA.objects.filter(tag=slug)
+    data = qAndA.objects.filter(tags=slug)
 
     return render(request, 'main/templates/questionanswer-tag.html', {'data': data})
