@@ -111,8 +111,9 @@
             </div>
 
             <div class="qanda">
+                <h3 class="subtitle" style="padding-bottom:20px">Questions and Answers</h3>
                 {% for q in questions %}
-                <a href="{% url 'questions' slug=q.slug %}">{{ q.question }}</a>
+                <h3><a href="{% url 'questions' slug=q.slug %}" class="hpquestion">{{ q.question }}</a></h3>
                 {% endfor %}
             </div>
 

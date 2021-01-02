@@ -712,6 +712,12 @@ footer {
    border-left-color: #e86138;
 }
 
+.hpquestion {
+  color: #e86138;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
 .bpadding {
     padding-bottom: 1.5rem;
 }
