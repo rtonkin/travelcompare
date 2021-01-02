@@ -27,7 +27,7 @@
                             <p>{{q.answer}}</p><br/>
                             <ul class="tags">
                                 {% for t in q.tags.all %}
-                                <li><a href="{% url 'questions' slug=q.slug %}" class="tag">{{ t.name }}</a></li>
+                                <li><a href="{% url 'questionstag' slug=t.slug %}" class="tag">{{ t.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         {% endfor %}
