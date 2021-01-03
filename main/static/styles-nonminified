@@ -742,6 +742,10 @@ footer {
     font-size: 2.25rem;
 }
 
+.pad20 {
+    padding: 0;
+}
+
 .titleonbg {
     line-height: 360px;
     font-size: 90px;
@@ -828,6 +832,7 @@ ul.topnav li.icon {display: none;}
   .mobilenb {display:inline-block}
   .bt {width:auto}
   .q {column-count: 1}
+  .pad20 {padding: 10px}
   .bt90 {max-width:90px}
   .skillsweb {display:none}
   .skillsmobile {display:inline-block; width:100%}

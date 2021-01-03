@@ -112,16 +112,16 @@
 
             <div class="qanda">
                 <h3 class="subtitle" style="padding-bottom:20px">Questions and Answers</h3>
-                <div class="q">
-                    {% for q in questions %}
-                    <h3 class=""><a href="{% url 'questions' slug=q.slug %}" class="hpquestion">{{ q.question }}</a></h3>
-                    {% endfor %}
-                </div>
-                <ul class="tags">
-                    {% for t in tags %}
-                    <li><a href="{% url 'questionstag' slug=t.slug %}" class="tag">{{ t.name }}</a></li>
-                    {% endfor %}
-                </ul>
+                    <div class="q">
+                        {% for q in questions %}
+                        <h3 class=""><a href="{% url 'questions' slug=q.slug %}" class="hpquestion">{{ q.question }}</a></h3>
+                        {% endfor %}
+                    </div>
+                    <ul class="tags pad20">
+                        {% for t in tags %}
+                        <li><a href="{% url 'questionstag' slug=t.slug %}" class="tag">{{ t.name }}</a></li>
+                        {% endfor %}
+                    </ul>
             </div>
 
         </div>
