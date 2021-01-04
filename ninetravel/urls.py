@@ -2,9 +2,9 @@ from django.contrib import admin
 from django.urls import path
 from main import views
 from django.contrib.sitemaps.views import sitemap
-from .sitemaps import SiteProductSitemap, ArticleSitemap
+from .sitemaps import SiteProductSitemap, ArticleSitemap, qAndASitemap
 
-sitemaps = {'siteproducts': SiteProductSitemap, 'articles': ArticleSitemap}
+sitemaps = {'siteproducts': SiteProductSitemap, 'articles': ArticleSitemap, 'qanda': qAndASitemap}
 
 urlpatterns = [
     path('admin/', admin.site.urls),

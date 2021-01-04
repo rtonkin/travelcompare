@@ -233,4 +233,5 @@ class qAndA(models.Model):
     def __str__(self):
         return self.question
 
-
+    def get_absolute_url(self):
+        return '/questions/' + self.slug + '/'
