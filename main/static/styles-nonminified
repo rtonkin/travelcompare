@@ -753,6 +753,10 @@ footer {
     color: black;
 }
 
+.mobiletitle {
+    display: hidden;
+}
+
 ul.topnav {
     list-style-type: none;
     margin: 0;
@@ -833,6 +837,7 @@ ul.topnav li.icon {display: none;}
   .bt {width:auto}
   .q {column-count: 1}
   .pad20 {padding: 10px}
+  .mobiletitle {display: block}
   .bt90 {max-width:90px}
   .skillsweb {display:none}
   .skillsmobile {display:inline-block; width:100%}
