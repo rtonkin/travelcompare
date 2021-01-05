@@ -25,6 +25,7 @@
                         {% for q in data %}
                             <h1 class="title">{{q.question}}</h1>
                             <p>{{q.answer}}</p><br/>
+                            <a href="{{q.ota.sitelink}}"><button class="bt" style="margin:1rem 0 1.25rem 0">Go To {{q.ota.name}}</button></a>
                             <ul class="tags">
                                 {% for t in q.tags.all %}
                                 <li><a href="{% url 'questionstag' slug=t.slug %}" class="tag">{{ t.name }}</a></li>
