@@ -9,7 +9,7 @@ def index(request):
 
     bookingsites = Site.objects.all()
     articles = Article.objects.all()
-    questions = qAndA.objects.all().order_by('?')[:9]
+    questions = qAndA.objects.all().order_by('?')[:10]
     tags = qAndATag.objects.all()
 
     return render(request, 'main/templates/index.html', {'bookingsites': bookingsites, 'articles': articles, 'questions': questions, 'tags': tags})
