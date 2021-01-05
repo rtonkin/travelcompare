@@ -32,7 +32,7 @@
                             <li><a href="{% url 'questionstag' slug=t.slug %}" class="tag">{{ t.name }}</a></li>
                             {% endfor %}
                         </ul>
-                        <button class="bt" style="margin:1rem 0 1.25rem 0" href="{{data.ota.sitelink}}">Go To {{data.ota.name}}</button>
+                        <a href="{{data.ota.sitelink}}"><button class="bt" style="margin:1rem 0 1.25rem 0">Go To {{data.ota.name}}</button></a>
                         <h6>Something wrong here? Let us know</h6><br/>
                         <h1 class="title">More Questions About {{data.ota.name}}</h1>
                         {% for q in otherquestions %}
