@@ -78,31 +78,31 @@
 
             <div id="content_1" class="tabcontent">
                 {% for site in bookingsites %}{% if site.prodhotels %}
-                <a href="{% url 'site' slug=site.slug product='hotels' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c">Read Full Review</p></div></a>
+                <a href="{% url 'site' slug=site.slug product='hotels' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
                 {% endif %}{% endfor %}
             </div>
 
             <div id="content_2" class="tabcontent" style="display:none;">
                 {% for site in bookingsites %}{% if site.prodflights %}
-                <a href="{% url 'site' slug=site.slug product='flights' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c">Read Full Review</p></div></a>
+                <a href="{% url 'site' slug=site.slug product='flights' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
                 {% endif %}{% endfor %}
             </div>
 
             <div id="content_3" class="tabcontent" style="display:none;">
                 {% for site in bookingsites %}{% if site.prodtrains %}
-                <a href="{% url 'site' slug=site.slug product='trains' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c">Read Full Review</p></div></a>
+                <a href="{% url 'site' slug=site.slug product='trains' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
                 {% endif %}{% endfor %}
             </div>
 
             <div id="content_4" class="tabcontent" style="display:none;">
                 {% for site in bookingsites %}{% if site.prodtours %}
-                <a href="{% url 'site' slug=site.slug product='tours' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c">Read Full Review</p></div></a>
+                <a href="{% url 'site' slug=site.slug product='tours' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
                 {% endif %}{% endfor %}
             </div>
 
             <div id="content_5" class="tabcontent" style="display:none;">
                 {% for site in bookingsites %}{% if site.prodtickets %}
-                <a href="{% url 'site' slug=site.slug product='tickets' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c">Read Full Review</p></div></a>
+                <a href="{% url 'site' slug=site.slug product='tickets' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
                 {% endif %}{% endfor %}
             </div>
 
