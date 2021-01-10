@@ -178,8 +178,13 @@ def questionAnswer(request, slug):
     ota = data.ota
     otherquestions = qAndA.objects.filter(Q(ota=ota), ~Q(slug=slug))
     tags = data.tags.all()
+    seokeywords = ""
+    for t in tags:
+        seokeywords.append(t.name)
+        seokeywords.append(", ")
+    seodescription = data.question + ": " + data.answer
 
-    return render(request, 'main/templates/questionanswer.html', {'data': data, 'otherquestions': otherquestions, 'tags': tags})
+    return render(request, 'main/templates/questionanswer.html', {'data': data, 'otherquestions': otherquestions, 'tags': tags, 'seokeywords': seokeywords, 'seodescription': seodescription})
 
 
 def questionAnswerTag(request, slug):
