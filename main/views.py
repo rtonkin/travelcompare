@@ -194,3 +194,11 @@ def questionAnswerTag(request, slug):
     seodescription = "Discover everything you need to know about " + tag.name + " when it comes to online travel."
 
     return render(request, 'main/templates/questionanswer-tag.html', {'data': data, 'tag': tag, 'seokeywords': seokeywords, 'seodescription': seodescription})
+
+
+def questionAnswerList(request):
+    tags = qAndATag.objects.all()
+    seokeywords = "online travel questions, online travel answers, online travel guide, online travel how to"
+    seodescription = "Make sure you're booking in the best place. Check out our frequently asked questions to learn how to book travel better!"
+
+    return render(request, 'main/templates/questionanswerlist.html', {'tags': tags, 'seokeywords': seokeywords, 'seodescription': seodescription})
