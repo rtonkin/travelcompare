@@ -190,5 +190,7 @@ def questionAnswer(request, slug):
 def questionAnswerTag(request, slug):
     data = qAndA.objects.filter(tags__slug=slug)
     tag = qAndATag.objects.get(slug=slug)
+    seokeywords = tag.name + ", " + "questions about " + tag.name
+    seodescription = "Discover everything you need to know about " + tag.name + " when it comes to online travel."
 
-    return render(request, 'main/templates/questionanswer-tag.html', {'data': data, 'tag': tag})
+    return render(request, 'main/templates/questionanswer-tag.html', {'data': data, 'tag': tag, 'seokeywords': seokeywords, 'seodescription': seodescription})
