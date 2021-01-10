@@ -22,6 +22,7 @@
                 <div class="wrapper">
                     <div id="left" class="padded">
                         <p class="herotitle">Questions & Answers</p>
+                        <p>Have questions? We've got answers. Click a topic below to find all relevant topics.</p>
                         <div style="column-count:2">
                         {% for t in tags %}
                             <a href="{% url 'questionstag' slug=t.slug %}" class="title">{{ t.name }}</a><br>
