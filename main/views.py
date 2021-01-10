@@ -180,8 +180,8 @@ def questionAnswer(request, slug):
     tags = data.tags.all()
     seokeywords = ""
     for t in tags:
-        seokeywords.append(t.name)
-        seokeywords.append(", ")
+        seokeywords += t.name
+        seokeywords += ", "
     seodescription = data.question + ": " + data.answer
 
     return render(request, 'main/templates/questionanswer.html', {'data': data, 'otherquestions': otherquestions, 'tags': tags, 'seokeywords': seokeywords, 'seodescription': seodescription})
