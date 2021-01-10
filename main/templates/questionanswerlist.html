@@ -22,9 +22,11 @@
                 <div class="wrapper">
                     <div id="left" class="padded">
                         <p class="herotitle">Questions & Answers</p>
+                        <div class="q">
                         {% for t in tags %}
                             <a href="{% url 'questionstag' slug=t.slug %}" class="title">{{ t.name }}</a>
                         {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
