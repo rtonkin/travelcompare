@@ -22,9 +22,9 @@
                 <div class="wrapper">
                     <div id="left" class="padded">
                         <p class="herotitle">Questions & Answers</p>
-                        <div class="q">
+                        <div style="column-count:2">
                         {% for t in tags %}
-                            <a href="{% url 'questionstag' slug=t.slug %}" class="title">{{ t.name }}</a>
+                            <a href="{% url 'questionstag' slug=t.slug %}" class="title">{{ t.name }}</a><br>
                         {% endfor %}
                         </div>
                     </div>
