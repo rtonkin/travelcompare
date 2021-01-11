@@ -50,7 +50,7 @@
                     <h3 class="subtitle" style="padding-bottom:20px">Articles</h3>
                     <div class="">
                     {% for article in articles %}{% if article.showonhomepage %}
-                    <a href="{% url 'article' slug=article.slug %}"><div class="articlecard"><img src="{% static article.thumbnailfilename %}" alt="Headshot photo" class="cardimagetop"><p class="articlecardtext">{{article.name}}</p></div></a>
+                    <a href="{% url 'article' slug=article.slug %}"><div class="articlecardsm"><img src="{% static article.thumbnailfilename %}" alt="Headshot photo" class="cardimagetop"><p class="articlecardtextsm">{{article.name}}</p></div></a>
                     {% endif %}{% endfor %}
                     </div>
                 </div>
