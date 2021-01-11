@@ -58,9 +58,10 @@ def sitecomparison(request, product, sitea, siteb):
 def article(request, slug):
 
     article = get_object_or_404(Article, slug=slug)
+    articles = Article.objects.all()
     allsites = Site.objects.all()
 
-    return render(request, 'main/templates/article-details.html', {'article': article, 'allsites': allsites})
+    return render(request, 'main/templates/article-details.html', {'article': article, 'allsites': allsites, 'articles': articles})
 
 
 def rec_beijing(request):
