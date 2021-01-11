@@ -32,7 +32,7 @@
                         <h1 class="title">
                             {{article.name}} Overview
                         </h1>
-                        {{article.fulltext}}
+                        {{article.fulltext|safe}}
                     </div>
                     <div id="right" class="padded">
                         {% if article.shopdestination %}
