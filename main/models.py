@@ -3,6 +3,7 @@ from datetime import date
 from django.dispatch import receiver
 from django.db.models.signals import pre_save, post_save
 from django.core.validators import MinValueValidator, MaxValueValidator
+from ckeditor.fields import RichTextField
 
 class Site(models.Model):
     name = models.CharField(max_length=50)
@@ -98,6 +99,7 @@ class Article(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     text = models.TextField(max_length=5000)
+    fulltext = RichTextField()
     sort = models.IntegerField()
     showonhomepage = models.BooleanField(default=False)
     thumbnailfilename = models.CharField(max_length=100)
