@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django.contrib.sites',
+    'ckeditor',
+    'ckeditor_uploader',
     'main',
 ]
 
@@ -124,11 +126,13 @@ USE_TZ = True
 STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '../ninetravel/main/static'),
+    os.path.join(BASE_DIR, '../../ninetravel/main/static'),
 )
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+
+CKEDITOR_UPLOAD_PATH = "uploads/articles/"
 
 SITE_ID = 1
