@@ -77,8 +77,8 @@
                         {% endif %}
                         </div>
                         <div style="flex-grow: 1" class="padded">
-                            <a href="{{siteproduct.link}}"><button class="bt">View Website</button></a>
-                            <a href="{{site.applink}}"><button class="bt">Download App</button></a>
+                            <a href="{{siteproduct.link}}"><button class="bt" onclick="return gtag_report_conversion('{{siteproduct.link}}')">View Website</button></a>
+                            <a href="{{site.applink}}"><button class="bt" onclick="return gtag_report_conversion('{{site.applink}}')">Download App</button></a>
                         </div>
                     </div>
                 </div>
