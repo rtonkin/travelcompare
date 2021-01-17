@@ -105,6 +105,7 @@ class Article(models.Model):
     showonhomepage = models.BooleanField(default=False)
     thumbnailfilename = models.CharField(max_length=100)
     backgroundfilename = models.CharField(max_length=100)
+    showheader = models.BooleanField(default=True)
 
     shopdestination = models.BooleanField(default=False)
     shopdestinationname = models.CharField(max_length=120)
