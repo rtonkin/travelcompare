@@ -113,6 +113,9 @@ class Article(models.Model):
     seokeywords = models.CharField(max_length=200)
     seodescription = models.CharField(max_length=200)
 
+    pubdate = models.DateField(default=date.today)
+    updatedate = models.DateField(default=date.today)
+
     def __str__(self):
         return self.name
 
