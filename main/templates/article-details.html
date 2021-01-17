@@ -32,6 +32,7 @@
                         <h1 class="title">
                             {{article.name}} Overview
                         </h1>
+                        <p>[Last updated: {{article.updatedate|date:"D d M Y" }}]</p>
                         {{article.fulltext|safe}}
                     </div>
                     <div id="right" class="padded">
