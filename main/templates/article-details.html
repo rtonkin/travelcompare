@@ -33,7 +33,7 @@
                             {{article.name}} Overview
                         </h1>
                         <p>[Last updated: {{article.updatedate|date:"D d M Y" }}]</p><br>
-                        {{article.fulltext|safe}}
+                        {{article.fulltext|safe}}{{booking.sitename}}
                     </div>
                     <div id="right" class="padded">
                         {% if article.shopdestination %}
