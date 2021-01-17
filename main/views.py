@@ -63,7 +63,14 @@ def article(request, slug):
     articles = Article.objects.all()
     allsites = Site.objects.all()
 
-    return render(request, 'main/templates/article-details.html', {'article': article, 'allsites': allsites, 'articles': articles})
+    trip = Site.objects.get(slug='tripcom')
+    expedia = Site.objects.get(slug='expedia')
+    hotels = Site.objects.get(slug='hotelscom')
+    booking = Site.objects.get(slug='booking')
+    agoda = Site.objects.get(slug='agoda')
+
+
+    return render(request, 'main/templates/article-details.html', {'article': article, 'allsites': allsites, 'articles': articles, 'trip': trip, 'expedia': expedia, 'hotels': hotels, 'booking': booking, 'agoda': agoda})
 
 
 def rec_beijing(request):

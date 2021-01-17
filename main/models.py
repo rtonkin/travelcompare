@@ -5,6 +5,7 @@ from django.db.models.signals import pre_save, post_save
 from django.core.validators import MinValueValidator, MaxValueValidator
 from ckeditor_uploader.fields import RichTextUploadingField
 
+
 class Site(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=32)
