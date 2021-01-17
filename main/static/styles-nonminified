@@ -399,7 +399,7 @@ p{
 }
 
 .styled-table thead tr {
-    background-color: #009879;
+    background-color: #e86138;
     color: #ffffff;
     text-align: left;
 }
@@ -418,12 +418,12 @@ p{
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #e86138;
 }
 
 .styled-table tbody tr.active-row {
     font-weight: bold;
-    color: #009879;
+    color: #e86138;
 }
 
 .oicon:hover {
