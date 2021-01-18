@@ -213,7 +213,7 @@
                         </div>
 
                         <div class="title">
-                            <br>Competitor Sites
+                            <br>{{site.name}} Competitor Sites
                             <div class="competitors">
                             {% for sp in compsites %}
                                 <a href="{% url 'site' slug=sp.site.slug product=prod.name %}"><div class="competitorcard"><img src="{% static sp.site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title2">{{sp.site.name}}</p><p><a href="{{sp.link}}"><button class="bt-short">Go To Website</button></a><a href="{% url 'site' slug=sp.site.slug product=prod.name %}"><button class="bt-short">Read Review</button></a></p></div></a>
