@@ -32,6 +32,7 @@
                                 <div class="sitelogo greyborder" style="flex-grow: 2">
                                     <img src="{% static trip.logofilename %}">
                                 </div>
+                                <p>When it comes to China travel, there's zero doubt that Trip.com has the most options when it comes to hotels. Not only is the number of hotels on the site considerably higher than it's competitors, but the prices are better too. We also rate the Trip.com user experience at least as good as the competitors, if not better.</p>
                                 <div class="sitename" style="flex-grow: 8">{{ trip.name }}<br><a class="fullreviewlink" href="{% url 'site' slug=trip.slug product='hotels' %}">Read Full Review</a></div>
                                 <div style="flex-grow: 1" class="padded">
                                     <a href="{{trip.sitelink}}"><button class="bt90">Check Prices</button></a>
