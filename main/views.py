@@ -41,7 +41,6 @@ def site(request, product, slug):
     compsites = SiteProduct.objects.filter(product=prod).exclude(pk=siteproduct.pk)
     allsites = Site.objects.all().exclude(slug=slug)
     print(prod)
-    print(asite)
     print(prod.name)
 
     return render(request, 'main/templates/site-details.html', {'site': asite, 'allsites': allsites, 'siteproduct': siteproduct, 'prod': prod, 'compsites': compsites})
