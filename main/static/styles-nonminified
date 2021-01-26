@@ -384,6 +384,8 @@ p{
     font-size: 10px;
     display: inline-block;
     line-height: 120px;
+    vertical-align: top;
+    min-height: 285px;
 }
 
 .tabcard:hover {
