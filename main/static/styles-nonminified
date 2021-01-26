@@ -650,8 +650,8 @@ footer {
 }
 
 .articlecardtext {
-    font-size: 20px;
-    padding: 20px 0 20px 0;
+    font-size: 17px;
+    padding: 17px 0 17px 0;
 }
 
 .articlecardtextsm {
