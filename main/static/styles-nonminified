@@ -377,6 +377,7 @@ p{
 }
 
 .articlecardsm {
+    max-width:210px;
     border: solid 1px #cecdcd;
     margin: 10px;
     border-radius: 15px;
