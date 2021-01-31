@@ -106,6 +106,7 @@ class Article(models.Model):
     thumbnailfilename = models.CharField(max_length=100)
     backgroundfilename = models.CharField(max_length=100)
     showheader = models.BooleanField(default=True)
+    similararticles = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
 
     shopdestination = models.BooleanField(default=False)
     shopdestinationname = models.CharField(max_length=120)
