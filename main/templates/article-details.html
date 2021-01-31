@@ -36,12 +36,13 @@
                         </h1>
                         <p>[Last updated: {{article.updatedate|date:"D d M Y" }}]</p><br>
                         {{article.fulltext|safe}}<br>
-
+                        {% if similararticles.count > 0 %}
                         <h5 style="padding-bottom:20px">Other Related Reading</h5>
                         {% for a in similararticles %}
                         <ul>
                             <li style="list-style-type:none"><a href="{% url 'article' slug=a.slug %}">{{a.name}}</a></li>
                         </ul>
+                        {% endif %}
                         {% endfor %}
                     </div>
 
