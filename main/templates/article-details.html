@@ -37,6 +37,14 @@
                         <p>[Last updated: {{article.updatedate|date:"D d M Y" }}]</p><br>
                         {{article.fulltext|safe}}
                     </div>
+                    <div id="left" class="padded">
+                        <h5 class="subtitle" style="padding-bottom:20px">Other Related Reading</h5>
+                        {% for a in similararticles %}
+                        <ul>
+                            <li><a href="{% url 'article' slug=a.slug %}">{{a.name}}</a></li>
+                        </ul>
+                        {% endfor %}
+                    </div>
                     <div id="right" class="padded">
                         {% if article.shopdestination %}
                         The following sites offer hotels in {{article.shopdestinationname}}
@@ -49,14 +57,7 @@
 
                     </div>
                 </div>
-                <div>
-                    <h3 class="subtitle" style="padding-bottom:20px">Other Related Reading</h3>
-                    {% for a in similararticles %}
-                    <ul>
-                        <li><a href="{% url 'article' slug=a.slug %}">{{a.name}}</a></li>
-                    </ul>
-                    {% endfor %}
-                </div>
+
                 <div class="articles">
                     <h3 class="subtitle" style="padding-bottom:20px">Articles</h3>
                     <div class="">
