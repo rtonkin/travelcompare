@@ -62,12 +62,15 @@ def article(request, slug):
     article = get_object_or_404(Article, slug=slug)
     articles = Article.objects.all()
     allsites = Site.objects.all()
+    similararticles = article.similararticles
 
     trip = Site.objects.get(slug='tripcom')
     expedia = Site.objects.get(slug='expedia')
     hotels = Site.objects.get(slug='hotelscom')
     booking = Site.objects.get(slug='booking')
     agoda = Site.objects.get(slug='agoda')
+
+    print(similararticles)
 
 
     return render(request, 'main/templates/article-details.html', {'article': article, 'allsites': allsites, 'articles': articles, 'trip': trip, 'expedia': expedia, 'hotels': hotels, 'booking': booking, 'agoda': agoda})
