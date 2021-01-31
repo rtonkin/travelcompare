@@ -62,7 +62,7 @@ def article(request, slug):
     article = get_object_or_404(Article, slug=slug)
     articles = Article.objects.all()
     allsites = Site.objects.all()
-    similararticles = article.similararticles
+    similararticles = Article.objects.filter(similararticles__slug=article.slug)
 
     trip = Site.objects.get(slug='tripcom')
     expedia = Site.objects.get(slug='expedia')
