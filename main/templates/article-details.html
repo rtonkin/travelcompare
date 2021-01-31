@@ -49,6 +49,11 @@
 
                     </div>
                 </div>
+                <div>
+                    {% for a article.similararticles %}
+                    <p>{{a.name}}</p>
+                    {% endfor %}
+                </div>
                 <div class="articles">
                     <h3 class="subtitle" style="padding-bottom:20px">Articles</h3>
                     <div class="">
