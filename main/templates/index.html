@@ -11,6 +11,22 @@
     </head>
 
     <body>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#dock2').Fisheye({
+            maxWidth: 60,
+            items: 'a',
+            itemsText: 'span',
+            container: '.dock-container2',
+            itemWidth: 40,
+            proximity: 80,
+            alignment : 'left',
+            valign: 'bottom',
+            halign : 'center'
+        }
+    )};
+    </script>
+    <a class="dock-item2" href="#"><span>Home</span><img src="images/home.png" alt="home"></a>
     <script>function rudrSwitchTab(rudr_tab_id, rudr_tab_content) {
 	var x = document.getElementsByClassName("tabcontent");
 	var i;
