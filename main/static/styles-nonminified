@@ -77,6 +77,7 @@ p{
 
 .posneg{
     max-width: 45%;
+    display: inline;
 }
 
 .comparisonlogobox {
