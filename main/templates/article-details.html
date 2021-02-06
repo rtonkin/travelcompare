@@ -36,8 +36,6 @@
                         </h1>
                         <p>[Last updated: {{article.updatedate|date:"D d M Y" }}]</p><br>
                         {{article.fulltext|safe}}<br>
-                        <i class="far fa-check-circle" style="color:green"></i>
-                        <i class="far fa-times-circle" style="color:red"></i>
                         {% if similararticles.count > 0 %}
                         <h5 style="padding-bottom:20px">Other Related Reading</h5>
                         {% for a in similararticles %}
