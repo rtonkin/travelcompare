@@ -126,15 +126,7 @@
                         </div>
                         <div class="title mobextrapad">Overview</div>
                         <p class="bpadding">{{siteproduct.descoverviewcontent}}</p>
-                        <div>
-                            <div class="posneg">
-                                <i class="far fa-check-circle fa-2x" style="color:green"><p style="color:#555;font-size:1.2rem">Here is some sample text</p></i>
-                            </div>
-                            <div class="posneg">
-                                <i class="far fa-times-circle fa-2x" style="color:red"><p style="color:#555;font-size:1.2rem"Here is some sample text</p></i>
-                            </div>
-                        </div>
-                        <p class="bpadding">{{siteproduct.descovertablecontent}}</p>
+                        <p class="bpadding">{{siteproduct.descovertablecontent|safe}}</p>
                         <div class="title">Features</div>
                         <p class="bpadding">{{siteproduct.descfeaturescontent}}</p>
                         <div class="title">Pricing & Fees</div>
