@@ -75,6 +75,10 @@ p{
     z-index: 100;
 }
 
+.posneg{
+    max-width: 45%;
+}
+
 .comparisonlogobox {
     max-width: 1260px;
     background-color: white;
@@ -909,4 +913,5 @@ ul.topnav li.icon {display: none;}
   .bigicon {font-size: 2rem}
   .titleonbg {line-height: 200px;font-size: 56px;font-weight: 600;color: black;}
   .bt-short {width:auto;padding:6px;display:inline-block;margin: 0 10px 3px 0;}
+  .posneg {max-width: 100%;}
 }
