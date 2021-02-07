@@ -59,7 +59,7 @@ class SiteProduct(models.Model):
     site = models.ForeignKey(Site, on_delete=models.CASCADE, related_name="sites")
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="products")
     descoverviewcontent = models.CharField(max_length=2000, default="")
-    descovertablecontent = models.TextField(max_length=4000, default="")
+    descovertablecontent = models.TextField(max_length=4000, default="", null=True, blank=True)
     descfeaturescontent = models.CharField(max_length=2000, default="")
     descpricingcontent = models.CharField(max_length=2000, default="")
     descavailabilitycontent = models.CharField(max_length=2000, default="")
