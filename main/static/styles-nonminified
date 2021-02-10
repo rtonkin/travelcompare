@@ -875,7 +875,7 @@ ul.topnav li.icon {display: none;}
   .sitename {font-size:1.5rem; padding:0 5px 0 5px}
   .tabcard {width:100%; margin:10px 0 10px 0}
   .mainwrapper {padding: 1rem;}
-  .articlecard {width:100%; margin:10px 0 10px 0}
+  .articlecard {width:100%; margin:10px 0 10px 0; padding-bottom: 15px}
   .oicon {max-width: 35px}
   .fullreviewlink {font-size: 16px}
   .sitelogo {max-width: 60px; max-height: 60px}
