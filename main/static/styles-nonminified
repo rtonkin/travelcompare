@@ -915,6 +915,6 @@ ul.topnav li.icon {display: none;}
   #title {padding: 5px 10px 0px 10px}
   .bigicon {font-size: 2rem}
   .titleonbg {line-height: 200px;font-size: 56px;font-weight: 600;color: black;}
-  .bt-short {width:auto;padding:6px;display:inline-block;margin: 0 10px 3px 0;}
+  .bt-short {width:auto;padding:6px;display:inline-block}
   .posneg {width: 100%;}
 }
