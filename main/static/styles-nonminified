@@ -384,7 +384,7 @@ p{
 }
 
 .articlecardsm {
-    max-width: 44%;
+    max-width:210px;
     border: solid 1px #cecdcd;
     margin: 10px;
     border-radius: 15px;
@@ -392,9 +392,10 @@ p{
     display: inline-block;
     line-height: 120px;
     vertical-align: top;
-    min-height: 240px;
+    min-height: 285px;
     text-align: center;
     color: #e86138;
+
 }
 
 .tabcard:hover {
@@ -899,6 +900,7 @@ ul.topnav li.icon {display: none;}
   .competitor {max-width:100px}
   .namebox {display:none}
   .mobilenb {display:inline-block}
+  .articlecardsm {max-width:44%;min-height:240px;display:inline-table}
   .bt {width:auto}
   .q {column-count: 1}
   .pad20 {padding: 10px}
