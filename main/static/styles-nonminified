@@ -364,11 +364,11 @@ p{
 }
 
 .fwarticle {
-    width: 100%;
+    width: 45%;
     border: solid 1px #cecdcd;
     margin: 10px;
     border-radius: 15px;
-    display: inline-block;
+    display: inline-table;
 }
 
 .articlecard {
