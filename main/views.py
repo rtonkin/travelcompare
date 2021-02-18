@@ -15,24 +15,6 @@ def index(request):
     return render(request, 'main/templates/index.html', {'bookingsites': bookingsites, 'articles': articles, 'questions': questions, 'tags': tags})
 
 
-def index2(request):
-
-    bookingsites = Site.objects.all()
-    articles = Article.objects.all()
-
-    products = Product.objects.all()
-    prods = []
-    for p in products:
-        prods.append(p.name)
-
-    otas = Site.objects.all()
-    sites = []
-    for s in otas:
-        sites.append(s.name)
-
-    return render(request, 'main/templates/index2.html', {'bookingsites': bookingsites, 'articles': articles, 'prods': prods, 'sites': sites})
-
-
 def site(request, product, slug):
 
     asite = get_object_or_404(Site, slug=slug)
