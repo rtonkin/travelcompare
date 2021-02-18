@@ -483,6 +483,7 @@ p{
 
 .herosearch {
     width: 100%;
+    display: hidden;
 }
 
 .bgimage {
