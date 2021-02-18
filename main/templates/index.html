@@ -25,11 +25,6 @@
 	}
 	document.getElementById(rudr_tab_id).className = 'tabmenu active';
 }   </script>
-    <script>
-      function gotosite() {
-        var dd1 = document.getElementById("dropdown1").value; var dd2 = document.getElementById("dropdown2").value;
-        window.location = "https://www.9travel.net/trains/"+dd1.toLowerCase()+"-to-"+dd2.toLowerCase()+"/"}
-    </script>
 
     {% include "header.html" %}
 
@@ -134,34 +129,6 @@
         </div>
 
         {% include "footer.html" %}
-
-        <ul id="menu" class="mfb-component--br mfb-zoomin" data-mfb-toggle="hover">
-          <li class="mfb-component__wrap">
-            <a href="#" class="mfb-component__button--main">
-              <i class="mfb-component__main-icon--resting ion-plus-round"></i>
-              <i class="mfb-component__main-icon--active ion-close-round"></i>
-            </a>
-            <ul class="mfb-component__list">
-              <li>
-                <a href="#" data-mfb-label="Child Button 1" class="mfb-component__button--child">
-                  <i class="mfb-component__child-icon ion-social-github"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" data-mfb-label="Child Button 2" class="mfb-component__button--child">
-                  <i class="mfb-component__child-icon ion-social-octocat"></i>
-                </a>
-              </li>
-
-              <li>
-                <a href="#"
-                   data-mfb-label="Child Button 3" class="mfb-component__button--child">
-                  <i class="mfb-component__child-icon ion-social-twitter"></i>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
 
     </body>
 
