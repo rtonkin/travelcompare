@@ -17,6 +17,7 @@ class Site(models.Model):
     sitelink = models.CharField(max_length=250)
     applink = models.CharField(max_length=250, blank=True, null=True)
     visible = models.BooleanField(default=True)
+    ismeta = models.BooleanField(default=False)
 
     logofilename = models.CharField(max_length=50)
     bgimagefilename = models.CharField(max_length=50)
