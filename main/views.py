@@ -22,8 +22,6 @@ def site(request, product, slug):
     siteproduct = get_object_or_404(SiteProduct, product=prod, site=asite)
     compsites = SiteProduct.objects.filter(product=prod).exclude(pk=siteproduct.pk)
     allsites = Site.objects.all().exclude(slug=slug)
-    print(prod)
-    print(prod.name)
 
     return render(request, 'main/templates/site-details.html', {'site': asite, 'allsites': allsites, 'siteproduct': siteproduct, 'prod': prod, 'compsites': compsites})
 
