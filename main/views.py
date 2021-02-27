@@ -42,6 +42,10 @@ def article(request, slug):
     article = get_object_or_404(Article, slug=slug)
     articles = Article.objects.all()
     allsites = Site.objects.all()
+    flightsprod = Product.objects.get(name="flights")
+    hotelsprod = Product.objects.get(name="hotels")
+    flightsites = SiteProduct.objects.filter(product=flightsprod)
+    hotelsites = SiteProduct.objects.filter(product=hotelsprod)
     similararticles = article.similararticles.all()
 
     trip = Site.objects.get(slug='tripcom')
@@ -51,7 +55,7 @@ def article(request, slug):
     agoda = Site.objects.get(slug='agoda')
 
 
-    return render(request, 'main/templates/article-details.html', {'article': article, 'similararticles': similararticles, 'allsites': allsites, 'articles': articles, 'trip': trip, 'expedia': expedia, 'hotels': hotels, 'booking': booking, 'agoda': agoda})
+    return render(request, 'main/templates/article-details.html', {'article': article, 'similararticles': similararticles, 'allsites': allsites, 'articles': articles, 'trip': trip, 'expedia': expedia, 'hotels': hotels, 'booking': booking, 'agoda': agoda, 'flightsites': flightsites, 'hotelsites': hotelsites})
 
 
 def rec_beijing(request):

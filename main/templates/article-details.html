@@ -51,7 +51,7 @@
                         The following sites offer hotels in {{article.shopdestinationname}}
                         {% endif %}
                         <div class="competitors">
-                        {% for site in allsites %}
+                        {% for site in hotelsites %}
                             <a href="{% url 'site' slug=site.slug product='hotels' %}"><img class="competitor" src="{% static site.logofilename %}"></a>
                         {% endfor %}
                         </div>
