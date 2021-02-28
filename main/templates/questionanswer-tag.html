@@ -23,7 +23,7 @@
                     <div id="left" class="padded">
                         <p class="herotitle">{{ tag.name }} Questions & Answers</p>
                         {% for q in data %}
-                            <h1 class="title">{{q.question}}</h1>
+                            <a href="{% url 'questions' slug=q.slug %}"><h1 class="title">{{q.question}}</h1></a>
                             <p>{{q.answer}}</p><br/>
                             <a href="{{q.ota.sitelink}}"><button class="bt" style="margin:0rem 0 1.25rem 0;max-width:50%">Go To {{q.ota.name}}</button></a>
                             <ul class="tags">
