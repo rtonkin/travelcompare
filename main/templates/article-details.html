@@ -55,8 +55,8 @@
                         {% for site in hotelsites %}
                             <a href="{% url 'site' slug=site.site.slug product='hotels' %}"><img class="competitor" src="{% static site.site.logofilename %}"></a>
                         {% endfor %}
-                        {% for site in flightsites %}
                             <h4>Flight Booking Sites</h4>
+                        {% for site in flightsites %}
                             <a href="{% url 'site' slug=site.site.slug product='flights' %}"><img class="competitor" src="{% static site.site.logofilename %}"></a>
                         {% endfor %}
                         </div>
