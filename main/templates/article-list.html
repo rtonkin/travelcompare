@@ -49,6 +49,7 @@
                         <h4>Flight Booking Sites</h4>
                     {% for site in flightsites %}
                         <a href="{% url 'site' slug=site.site.slug product='flights' %}"><img class="competitor" src="{% static site.site.logofilename %}"></a>
+                    {% endfor %}
                     </div>
                 </div>
             </div>
