@@ -130,9 +130,13 @@ def featurecomparison(request, slug):
 def allarticles(request):
 
     arts = Article.objects.all()
+    flightsprod = Product.objects.get(name="flights")
+    hotelsprod = Product.objects.get(name="hotels")
+    flightsites = SiteProduct.objects.filter(product=flightsprod)
+    hotelsites = SiteProduct.objects.filter(product=hotelsprod)
     allsites = Site.objects.all()
 
-    return render(request, 'main/templates/article-list.html', {'arts': arts, 'allsites': allsites})
+    return render(request, 'main/templates/article-list.html', {'arts': arts, 'allsites': allsites, 'flightsites': flightsites, 'hotelsites': hotelsites})
 
 
 def about(request):

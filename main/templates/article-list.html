@@ -42,12 +42,13 @@
                         {% endfor  %}
                     </div>
                     <div id="right" class="padded">
-                        <div class="title">
-                            Online Travel Agencies
-                        </div>
-                        {% for site in allsites %}
-                        <a href="{% url 'site' slug=site.slug product='hotels' %}"><img class="competitor" src="{% static site.logofilename %}"></a>
-                        {% endfor %}
+                        <h4>Hotel Booking Sites</h4>
+                    {% for site in hotelsites %}
+                        <a href="{% url 'site' slug=site.site.slug product='hotels' %}"><img class="competitor" src="{% static site.site.logofilename %}"></a>
+                    {% endfor %}
+                        <h4>Flight Booking Sites</h4>
+                    {% for site in flightsites %}
+                        <a href="{% url 'site' slug=site.site.slug product='flights' %}"><img class="competitor" src="{% static site.site.logofilename %}"></a>
                     </div>
                 </div>
             </div>
