@@ -34,7 +34,7 @@
                         <h1 class="title">
                             {{article.name}}
                         </h1>
-                        <p>[Last updated: {{article.updatedate|date:"D d M Y" }}]</p><br>
+                        <p class="toppadding">[Last updated: {{article.updatedate|date:"D d M Y" }}]</p><br>
                         {{article.fulltext|safe}}<br>
                         {% if similararticles.count > 0 %}
                         <h5 style="padding-bottom:20px">Other Related Reading</h5>

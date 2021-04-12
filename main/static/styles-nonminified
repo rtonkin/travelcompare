@@ -845,6 +845,10 @@ ul.topnav li a {
     line-height: 38px;
 }
 
+.toppadding {
+    padding-top: 10px;
+}
+
 /* Change background color of links on hover */
 ul.topnav li a:hover {background-color: #111;}
 

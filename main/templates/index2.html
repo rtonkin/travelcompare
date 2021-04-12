@@ -1,0 +1,333 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        {% include "ga.html" %}
+        <title>Compare Online Travel Sites and Get the Best Deal - 9Travel.net</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="keywords" content="online travel sites, best hotel site, best flight site, best travel app"/>
+        <meta name="description" content="Make sure you are getting the best deal when you're booking online travel. Compare all online travel sites and apps to find the one which suits you best."/>
+
+    </head>
+
+    <body>
+    <script>function rudrSwitchTab(rudr_tab_id, rudr_tab_content) {
+	var x = document.getElementsByClassName("tabcontent");
+	var i;
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = 'none'; // hide all tab content
+	}
+	document.getElementById(rudr_tab_content).style.display = 'block';
+	var x = document.getElementsByClassName("tabmenu");
+	var i;
+	for (i = 0; i < x.length; i++) {
+		x[i].className = 'tabmenu';
+	}
+	document.getElementById(rudr_tab_id).className = 'tabmenu active';
+}   </script>
+
+    {% include "header.html" %}
+
+        <div class="bgheader bgheaderd">
+            <div class="bgheaderbody">
+
+                <div class="bgimagecontainer">
+                    <div class="bgimage" style="background-image: url({% static 'homebg.jpg' %});"></div>
+                </div>
+
+                <div class="bgheadercontent">
+
+                    <div class="heroheader">
+                        <h1 class="herotitle">Compare Travel Sites. Book Better.</h1>
+                        <h2 class="herosubtitle"><div>Compare <span class="herosubtitlespan">online travel agencies</span> and learn how to get a deal which suits you.</div></h2>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mainwrapper">
+
+            <div class="mobiletitle">
+                <h1 class="herotitle">Book Travel. Book Better.</h1>
+                <h2 class="herosubtitle"><div>Compare <span class="herosubtitlespan">online travel agencies</span> and learn how to get a deal which suits you.</div></h2>
+            </div>
+
+            <h3 class="subtitle" style="padding-bottom:20px">Travel Site Reviews</h3>
+
+            <div class="iconsmenu">
+                <a href="javascript:rudrSwitchTab('tb_1', 'content_1');" id="tb_1" class="tabmenu active"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/003-hotel.svg" %}'><br>Hotels</div></a>
+                <a href="javascript:rudrSwitchTab('tb_2', 'content_2');" id="tb_2" class="tabmenu"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/001-plane.svg" %}'><br>Flights</div></a>
+                <a href="javascript:rudrSwitchTab('tb_3', 'content_3');" id="tb_3" class="tabmenu"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/002-train.svg" %}'><br>Trains</div></a>
+                <a href="javascript:rudrSwitchTab('tb_4', 'content_4');" id="tb_4" class="tabmenu"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/005-kaminarimon-gate.svg" %}'><br>Tours</div></a>
+                <a href="javascript:rudrSwitchTab('tb_5', 'content_5');" id="tb_5" class="tabmenu"><div class="mobile-footer-cell"><img class="oicon" src='{% static "icons/004-ticket.svg" %}'><br>Tickets</div></a>
+            </div>
+
+            <div id="content_1" class="tabcontent">
+                {% for site in bookingsites %}{% if site.visible %}{% if site.prodhotels %}
+                <a href="{% url 'site' slug=site.slug product='hotels' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
+                {% endif %}{% endif %}{% endfor %}
+            </div>
+
+            <div id="content_2" class="tabcontent" style="display:none;">
+                {% for site in bookingsites %}{% if site.visible %}{% if site.prodflights %}
+                <a href="{% url 'site' slug=site.slug product='flights' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
+                {% endif %}{% endif %}{% endfor %}
+            </div>
+
+            <div id="content_3" class="tabcontent" style="display:none;">
+                {% for site in bookingsites %}{% if site.visible %}{% if site.prodtrains %}
+                <a href="{% url 'site' slug=site.slug product='trains' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
+                {% endif %}{% endif %}{% endfor %}
+            </div>
+
+            <div id="content_4" class="tabcontent" style="display:none;">
+                {% for site in bookingsites %}{% if site.visible %}{% if site.prodtours %}
+                <a href="{% url 'site' slug=site.slug product='tours' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
+                {% endif %}{% endif %}{% endfor %}
+            </div>
+
+            <div id="content_5" class="tabcontent" style="display:none;">
+                {% for site in bookingsites %}{% if site.visible %}{% if site.prodtickets %}
+                <a href="{% url 'site' slug=site.slug product='tickets' %}"><div class="tabcard"><img src="{% static site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title">{{site.name}}</p><p id="text">{{site.description|truncatechars:120}}</p><p id="text" style="color:#ff492c;margin-top:0.3rem">Read Full Review</p></div></a>
+                {% endif %}{% endif %}{% endfor %}
+            </div>
+
+            <div class="articles">
+<div class="content content--fixed">
+
+    <h2 class="contentStrip__title">Latest guides, comparisons and news</h2>
+
+    <div class="red-latestNewsFeed">
+
+      <div class="u-grid u-grid--noWrap@s">
+        <div class="u-grid__col u-2/5@s">
+
+
+
+
+					<div class="comparisonFeed">
+								<div class="comparisonFeed__list">
+					<div class="u-grid u-grid--gutterCollapse u-grid--alignStretch">
+																					<div class="u-grid__col">
+																													<div class="comparisonFeed__post comparisonFeed__post--featured">
+																							<article class="luna-card luna-card--stretch"><figure class="luna-card__figure"><a href="https://www.finder.com.au/will-apra-cool-house-prices">
+															<picture data-queued="true"><source type="image/webp" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=450&amp;webp=1 450w" data-sizes="(max-width: 600px) 80vw, 35vw" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=450&amp;webp=1 450w" sizes="(max-width: 600px) 80vw, 35vw"><img class="luna-image" src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg" data-src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=450 450w" data-sizes="(max-width: 600px) 80vw, 35vw" alt="Will APRA property regulators ever act to cool house prices?" data-queued="true" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/FakeBirdsSoar_GettyImages_450x250.jpg?fit=450 450w" sizes="(max-width: 600px) 80vw, 35vw"></picture></a>
+													</figure><div class="luna-card__block">
+														<div class="comparisonFeed__header">
+															<a class="comparisonFeed__category" href="/home-loans" aria-label="Home Loans">
+																Home Loans
+															</a>
+															<time class="comparisonFeed__date" title="01 Apr 21">01 Apr 21</time></div>
+													</div>
+													<div class="luna-card__block">
+														<h3 class="luna-card__title">
+															<a href="https://www.finder.com.au/will-apra-cool-house-prices">Will APRA property regulators ever act to cool house prices?</a>
+														</h3>
+																													<p>APRA says risky lending, not rising property prices, would prompt a lending crackdown. </p>
+																											</div>
+																											<footer class="luna-card__footer"><div class="luna-author">
+																<img class="luna-avatar luna-avatar--small" src="https://secure.gravatar.com/avatar/3f82be02619d6c521786b46b288c7b8d?s=60&amp;r=g" data-src="https://secure.gravatar.com/avatar/3f82be02619d6c521786b46b288c7b8d?s=60&amp;r=g" alt="Richard Whitten" data-queued="true"><div class="luna-author__details">
+																	<address>by
+																		<a href="https://www.finder.com.au/author/richard-w" rel="author">Richard Whitten</a>
+																	</address>
+																</div>
+															</div>
+														</footer></article></div>
+										</div>
+																	</div>
+							</div>
+						</div>
+
+
+
+
+
+        </div>
+        <div class="u-grid__col">
+
+
+
+
+					<div class="comparisonFeed">
+								<div class="comparisonFeed__list">
+					<div class="u-grid u-grid--gutterCollapse u-grid--alignStretch">
+																						<div class="u-grid__col u-4/5 u-1/1@s">
+																															<div class="comparisonFeed__post">
+																								<article class="luna-card luna-card--stretch"><figure class="luna-card__figure"><a href="https://www.finder.com.au/todays-top-online-deals">
+															<picture data-queued="true"><source type="image/webp" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=450&amp;webp=1 450w" data-sizes="(max-width: 600px) 50vw, 20vw" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=450&amp;webp=1 450w" sizes="(max-width: 600px) 50vw, 20vw"><img class="luna-image" src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png" data-src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=450 450w" data-sizes="(max-width: 600px) 50vw, 20vw" alt="Finder Daily Deals: The 5 best online deals in Australia today" data-queued="true" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/Dell-XPS-13-laptop_Supplied_450x250.png?fit=450 450w" sizes="(max-width: 600px) 50vw, 20vw"></picture></a>
+													</figure><div class="luna-card__block">
+														<div class="comparisonFeed__header">
+															<a class="comparisonFeed__category" href="/shopping" aria-label="Shopping">
+																Shopping
+															</a>
+															<time class="comparisonFeed__date" title="06 Apr 21">06 Apr 21</time></div>
+													</div>
+													<div class="luna-card__block">
+														<h3 class="luna-card__title">
+															<a href="https://www.finder.com.au/todays-top-online-deals">Finder Daily Deals: The 5 best online deals in Australia today</a>
+														</h3>
+																											</div>
+																									</article></div>
+										</div>
+																									<div class="u-grid__col u-4/5 u-1/1@s">
+																															<div class="comparisonFeed__post">
+																								<article class="luna-card luna-card--stretch"><figure class="luna-card__figure"><a href="https://www.finder.com.au/how-to-get-a-sodastream-for-19-from-ebay-today">
+															<picture data-queued="true"><source type="image/webp" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=450&amp;webp=1 450w" data-sizes="(max-width: 600px) 50vw, 20vw" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=450&amp;webp=1 450w" sizes="(max-width: 600px) 50vw, 20vw"><img class="luna-image" src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg" data-src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=450 450w" data-sizes="(max-width: 600px) 50vw, 20vw" alt="Deal alert: Last chance to buy a $19 SodaStream from eBay" data-queued="true" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/SodaStream_Supplied_450x250.jpg?fit=450 450w" sizes="(max-width: 600px) 50vw, 20vw"></picture></a>
+													</figure><div class="luna-card__block">
+														<div class="comparisonFeed__header">
+															<a class="comparisonFeed__category" href="" aria-label="">
+
+															</a>
+															<time class="comparisonFeed__date" title="06 Apr 21">06 Apr 21</time></div>
+													</div>
+													<div class="luna-card__block">
+														<h3 class="luna-card__title">
+															<a href="https://www.finder.com.au/how-to-get-a-sodastream-for-19-from-ebay-today">Deal alert: Last chance to buy a $19 SodaStream from eBay</a>
+														</h3>
+																											</div>
+																									</article></div>
+										</div>
+																	</div>
+							</div>
+						</div>
+
+
+
+
+
+        </div>
+        <div class="u-grid__col">
+
+
+
+
+
+											<div class="newsFeed">
+															<div class="newsFeed__post">
+									<div class="newsFeed__header">
+										<a class="newsFeed__category" href="/cryptocurrency" aria-label="Cryptocurrency">
+											Cryptocurrency
+										</a>
+										<time class="newsFeed__date" title="06 Apr 2021">06 Apr 21</time></div>
+									<div class="u-grid u-grid--noWrap">
+										<div class="u-grid__col">
+											<h3 class="newsFeed__title">
+												<a href="https://www.finder.com.au/ethereum-price-update-06-04-2021">Ethereum breaks new record price and looks set to go higher</a>
+											</h3>
+										</div>
+										<div class="u-grid__col u-1/3">
+											<a href="https://www.finder.com.au/ethereum-price-update-06-04-2021">
+												<picture data-queued="true"><source type="image/webp" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=450&amp;webp=1 450w" data-sizes="(max-width: 600px) 30vw, 180px" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=450&amp;webp=1 450w" sizes="(max-width: 600px) 30vw, 180px"><img class="luna-image" src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg" data-src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=450 450w" data-sizes="(max-width: 600px) 30vw, 180px" alt="Ethereum breaks new record price and looks set to go higher" data-queued="true" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/ethpricedaily06april_finder_450x250.jpg?fit=450 450w" sizes="(max-width: 600px) 30vw, 180px"></picture></a>
+										</div>
+									</div>
+								</div>
+															<div class="newsFeed__post">
+									<div class="newsFeed__header">
+										<a class="newsFeed__category" href="/flights" aria-label="Flights">
+											Flights
+										</a>
+										<time class="newsFeed__date" title="06 Apr 2021">06 Apr 21</time></div>
+									<div class="u-grid u-grid--noWrap">
+										<div class="u-grid__col">
+											<h3 class="newsFeed__title">
+												<a href="https://www.finder.com.au/new-zealand-travel-bubble-opens">New Zealand travel bubble opens: Rules and costs explained</a>
+											</h3>
+										</div>
+										<div class="u-grid__col u-1/3">
+											<a href="https://www.finder.com.au/new-zealand-travel-bubble-opens">
+												<picture data-queued="true"><source type="image/webp" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=450&amp;webp=1 450w" data-sizes="(max-width: 600px) 30vw, 180px" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=450&amp;webp=1 450w" sizes="(max-width: 600px) 30vw, 180px"><img class="luna-image" src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg" data-src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=450 450w" data-sizes="(max-width: 600px) 30vw, 180px" alt="New Zealand travel bubble opens: Rules and costs explained" data-queued="true" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/NewZealand_Getty_450x250-1.jpg?fit=450 450w" sizes="(max-width: 600px) 30vw, 180px"></picture></a>
+										</div>
+									</div>
+								</div>
+															<div class="newsFeed__post">
+									<div class="newsFeed__header">
+										<a class="newsFeed__category" href="/home-loans" aria-label="Home Loans">
+											Home Loans
+										</a>
+										<time class="newsFeed__date" title="06 Apr 2021">06 Apr 21</time></div>
+									<div class="u-grid u-grid--noWrap">
+										<div class="u-grid__col">
+											<h3 class="newsFeed__title">
+												<a href="https://www.finder.com.au/rba-holds-april-2021">RBA holds again: Is it time to fix your mortgage rate?</a>
+											</h3>
+										</div>
+										<div class="u-grid__col u-1/3">
+											<a href="https://www.finder.com.au/rba-holds-april-2021">
+												<picture data-queued="true"><source type="image/webp" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=450&amp;webp=1 450w" data-sizes="(max-width: 600px) 30vw, 180px" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=450&amp;webp=1 450w" sizes="(max-width: 600px) 30vw, 180px"><img class="luna-image" src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg" data-src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=450 450w" data-sizes="(max-width: 600px) 30vw, 180px" alt="RBA holds again: Is it time to fix your mortgage rate?" data-queued="true" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/04/CheckingBills_GettyImages_450x250.jpg?fit=450 450w" sizes="(max-width: 600px) 30vw, 180px"></picture></a>
+										</div>
+									</div>
+								</div>
+															<div class="newsFeed__post">
+									<div class="newsFeed__header">
+										<a class="newsFeed__category" href="/savings-accounts" aria-label="Savings Accounts">
+											Savings Accounts
+										</a>
+										<time class="newsFeed__date" title="31 Mar 2021">31 Mar 21</time></div>
+									<div class="u-grid u-grid--noWrap">
+										<div class="u-grid__col">
+											<h3 class="newsFeed__title">
+												<a href="https://www.finder.com.au/amp-saver-new-bonus-rate-april-2021">How to get AMP Saver’s new high interest bonus rate</a>
+											</h3>
+										</div>
+										<div class="u-grid__col u-1/3">
+											<a href="https://www.finder.com.au/amp-saver-new-bonus-rate-april-2021">
+												<picture data-queued="true"><source type="image/webp" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=450&amp;webp=1 450w" data-sizes="(max-width: 600px) 30vw, 180px" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=450&amp;webp=1 450w" sizes="(max-width: 600px) 30vw, 180px"><img class="luna-image" src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg" data-src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=450 450w" data-sizes="(max-width: 600px) 30vw, 180px" alt="How to get AMP Saver’s new high interest bonus rate" data-queued="true" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/ManWithDebitCard_Getty_450x250.jpg?fit=450 450w" sizes="(max-width: 600px) 30vw, 180px"></picture></a>
+										</div>
+									</div>
+								</div>
+															<div class="newsFeed__post">
+									<div class="newsFeed__header">
+										<a class="newsFeed__category" href="/american-express-credit-cards" aria-label="American Express">
+											American Express
+										</a>
+										<time class="newsFeed__date" title="31 Mar 2021">31 Mar 21</time></div>
+									<div class="u-grid u-grid--noWrap">
+										<div class="u-grid__col">
+											<h3 class="newsFeed__title">
+												<a href="https://www.finder.com.au/american-express-shop-small-2021">Credit card rewards: Big Amex Shop Small changes explained</a>
+											</h3>
+										</div>
+										<div class="u-grid__col u-1/3">
+											<a href="https://www.finder.com.au/american-express-shop-small-2021">
+												<picture data-queued="true"><source type="image/webp" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=450&amp;webp=1 450w" data-sizes="(max-width: 600px) 30vw, 180px" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=180&amp;webp=1 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=360&amp;webp=1 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=450&amp;webp=1 450w" sizes="(max-width: 600px) 30vw, 180px"><img class="luna-image" src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg" data-src="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg" data-srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=450 450w" data-sizes="(max-width: 600px) 30vw, 180px" alt="Credit card rewards: Big Amex Shop Small changes explained" data-queued="true" srcset="https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=180 180w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=360 360w, https://dvh1deh6tagwk.cloudfront.net/finder-au/wp-uploads/2021/03/AmexShopSmall_FinderAmyBG_450x250.jpg?fit=450 450w" sizes="(max-width: 600px) 30vw, 180px"></picture></a>
+										</div>
+									</div>
+								</div>
+													</div>
+
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+            </div>
+
+            <div class="qanda">
+                <h3 class="subtitle" style="padding-bottom:20px">Questions and Answers</h3>
+                    <div class="q">
+                        {% for q in questions %}
+                        <h3 class=""><a href="{% url 'questions' slug=q.slug %}" class="hpquestion">{{ q.question }}</a></h3>
+                        {% endfor %}
+                    </div>
+                    <ul class="tags pad20">
+                        {% for t in tags %}
+                        <li><a href="{% url 'questionstag' slug=t.slug %}" class="tag">{{ t.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+            </div>
+
+        </div>
+
+        {% include "footer.html" %}
+
+    </body>
+
+</html>
