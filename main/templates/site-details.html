@@ -180,7 +180,7 @@
                         <div class="truncate"></div>
                         <div class="competitors">
                         {% for sites in compsites %}
-                            <a href="{% url 'comparison' sitea=site.slug siteb=sites.site.slug product=prod %}"><img class="competitor" src="{% static sites.site.logofilename %}"></a>
+                            <a href="{% url 'comparison' sitea=site.slug siteb=sites.site.slug product=prod %}"><img class="competitor" src="{% static sites.site.logofilename %}" alt="OTA logo"></a>
                         {% endfor %}
                         </div>
                     </div>
@@ -216,7 +216,7 @@
                             <br>{{site.name}} Competitor Sites
                             <div class="competitors">
                             {% for sp in compsites %}
-                                <a href="{% url 'site' slug=sp.site.slug product=prod.name %}"><div class="competitorcard"><img src="{% static sp.site.logofilename %}" alt="Headshot photo" class="lefticon pr20"><p id="title2">{{sp.site.name}}</p><p><a href="{{sp.link}}"><button class="bt-short">Go To Website</button></a><a href="{% url 'site' slug=sp.site.slug product=prod.name %}"><button class="bt-short">Read Review</button></a></p></div></a>
+                                <a href="{% url 'site' slug=sp.site.slug product=prod.name %}"><div class="competitorcard"><img src="{% static sp.site.logofilename %}" alt="OTA logo" class="lefticon pr20"><p id="title2">{{sp.site.name}}</p><p><a href="{{sp.link}}"><button class="bt-short">Go To Website</button></a><a href="{% url 'site' slug=sp.site.slug product=prod.name %}"><button class="bt-short">Read Review</button></a></p></div></a>
                             {% endfor %}
                             </div>
                         </div>
